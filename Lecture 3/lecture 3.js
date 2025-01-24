@@ -275,7 +275,7 @@ String Methods in JS :
 
 // let str = "subho";
 // let newStr = str.toUpperCase(); // we have put that in new variable.
-// let str = ste.toUpperCase(); // or we have write old string variable, but there will no changes happen in old string.
+// let str = str.toUpperCase(); // or we have write old string variable, but there will no changes happen in old string.
 // console.log(newStr); // then we can upper case it.
 
 // - There will be no changes happen in old string, because strings are 'immutable'.
