@@ -1,0 +1,45 @@
+div {
+    width: 200px;
+    height: 100px;
+    background-color: dodgerblue;
+    color: black;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 20px;
+    border: 1px solid black;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: 25px;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+#para {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+#btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btn3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: relative;
+    top: 4px; 
+}
+
+#heading {
+    font-family: "Kaushan Script", sans-serif;
+    font-size: 40px;
+}
