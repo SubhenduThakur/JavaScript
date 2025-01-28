@@ -20,7 +20,7 @@ let info = ["rahul", 86, "Delhi"]; // we can write also this but it's not preffe
 /*
 (II) Array Indeices :
 
-arr[0], arr[1], arr[2]
+- arr[0], arr[1], arr[2]
 
 let marks = [97, 82, 64, 76, 36];
 console.log(marks[2]);
@@ -29,7 +29,7 @@ console.log(marks[2] = 10] // we can also change value of array.
 */
 
 /* 
-Looping Over an Array :
+-> Looping Over an Array :
 
 - Print all elements of an array.
 
@@ -58,8 +58,8 @@ console.log(arr[i]);
 
 
 /*
-Qs1.For given an array with marks of students -> [85, 97, 44, 37, 76, 60]
-Find the avarage marks of the entire class.
+Q.1. For given an array with marks of students -> [85, 97, 44, 37, 76, 60]
+. Find the avarage marks of the entire class.
 */
 
 // let marks = [85, 97, 44, 37, 76, 60];
@@ -74,8 +74,8 @@ Find the avarage marks of the entire class.
 // console.log(`The avarage marks of the entire class is : ${avg}`);
 
 /* 
-Qs. For a given array with prices of 5 items -> [250, 645, 300, 900, 50]
-All items have an offer of 10% OFF on them. Change the array to store final price after applying offer.
+Q.2. For a given array with prices of 5 items -> [250, 645, 300, 900, 50]
+. All items have an offer of 10% OFF on them. Change the array to store final price after applying offer.
 */
 
 // let items = [250, 645, 300, 900, 50];
