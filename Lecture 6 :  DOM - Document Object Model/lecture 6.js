@@ -1,4 +1,4 @@
-// Lecture 6 :  DOM - Document Object Model
+// -> Lecture 6 :  DOM - Document Object Model
 
 /* 
 

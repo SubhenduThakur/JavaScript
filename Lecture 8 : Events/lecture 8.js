@@ -1,4 +1,4 @@
-// Lecture 8 : Events
+// -> Lecture 8 : Events
 /*
 
 » Events in JS :

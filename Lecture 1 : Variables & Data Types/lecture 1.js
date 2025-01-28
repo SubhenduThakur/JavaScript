@@ -1,4 +1,4 @@
-// LECTURE 1 : Variables & Data Types
+// -> Lecture 1 : Variables & Data Types
 
 
 /*

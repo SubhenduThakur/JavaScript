@@ -1,5 +1,5 @@
 /*
-Chapter 6 : DOM - Part 2
+-> Chapter 6 : DOM - Part 2
 
 DOM Manipulation :
 

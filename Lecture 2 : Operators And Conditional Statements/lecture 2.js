@@ -1,4 +1,4 @@
-// Lecture 2 : Operators And Conditional Statements
+// -> Lecture 2 : Operators And Conditional Statements
 
 /* 
 
