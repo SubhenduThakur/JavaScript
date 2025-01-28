@@ -1,4 +1,4 @@
-// Lecture 3 : Loops and Strings
+// -> Lecture 3 : Loops and Strings
 /*
 
 -> Loops in JS :
