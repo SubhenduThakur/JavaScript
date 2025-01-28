@@ -1,8 +1,7 @@
 // Lecture 3 : Loops and Strings
-
 /*
 
-Loops in JS :
+-> Loops in JS :
 
 - Loops are used to execute a piece of code again & again.
 
@@ -40,7 +39,8 @@ Loops in JS :
 // console.log("sum =", sum);
 
 
-/* (II) whiel Loop :
+/* 
+(II) while Loop :
 
 while (condition) {
     // do so work.
@@ -77,7 +77,8 @@ do {
 // } while (i <= 5);
 
 
-/* (IV) for-of Loop :
+/* 
+(IV) for-of Loop :
 
 - The 'for-of loop' helps to loop over strings and arrays.
 
@@ -138,12 +139,13 @@ for(letKey in objVar) {
 
 
 /*
+-> Let's Practice :
 
-Let's Practice :
-
-Qs1. Print all even numbers from 0 - 100.
+Q.1 : Print all even numbers from 0 - 100.
 
 */
+
+// Answer:
 
 // for (let num = 0; num <= 100; num++) {
 //     if(num % 2 === 0) { // if we want to print odd numbet : num % 2 !==  0
@@ -152,8 +154,13 @@ Qs1. Print all even numbers from 0 - 100.
 // }
 
 
-/* Qs2. Crate a game where you start with any random game number. Ask the user to keep gussin the
-game number the game number until the user enters correct value. */
+/* 
+Q.2 :
+. Crate a game where you start with any random game number. Ask the user to keep gussin the
+. game number the game number until the user enters correct value. 
+*/
+
+// Answer:
 
 // let gameNum = 25;
 // let userNum = prompt("Guess the game number :");
@@ -197,7 +204,10 @@ game number the game number until the user enters correct value. */
 
 /*
 
-Srings in JS :
+/* ------------------------------------------------------------------------------------------------------------- */
+
+/*
+-> Srings in JS :
 
 (I) Create String - let str = "Subho";
 (II) String Length - str.length
@@ -211,13 +221,13 @@ Srings in JS :
 
 /*
 
-Template Literals in JS :
+-> Template Literals in JS :
 
 - A way to have embedded expressions in strings.
 
-`this is a template literals`
+- `this is a template literals`
 
-*/ 
+*/
 
 // let obj = {
 //     item : "pen",
@@ -233,12 +243,12 @@ Template Literals in JS :
 Q. What is String Interpletion?
 A. To crate strings by doning substitution of placeholders.
 
-`string text ${expression} string text`
+- `string text ${expression} string text`
 
 */
 
 
-// Escape Characters :
+// -> Escape Characters :
 
 // 1. \n (next line)
 // console.log("Subhendu\nThakur");
@@ -246,13 +256,15 @@ A. To crate strings by doning substitution of placeholders.
 // 2. \t (tab space)
 // console.log("Subhendu\tThakur");
 
-/* - After using escape characters, if we check the length, the back slash(\) will not counted. */
+/* 
+- After using escape characters, if we check the length, the back slash(\) will not counted.
+*/
 
 // let str = "Subhendu\nThakur"; // total characters 16 with \n
 // console.log(str.length); // 15
 
 /*
-String Methods in JS :
+-> String Methods in JS :
 
 - These are built-in functions to munipulate a string.
 
@@ -265,7 +277,7 @@ String Methods in JS :
 - In JavaScript, the old string doesn’t change; whatever changes occur, happen in a new string.
 */
 
-// Example :
+// -> Example :
 
 // let str = "subho";
 // str.toUpperCase();
@@ -320,14 +332,18 @@ String Methods in JS :
 
 
 /*
-Let's Practice :
+-> Let's Practice :
 
-Qs1. Prompt the user to enter their full name.
-Genetate a username for them based on the input.
-Start username with @, followed by their full name and ending with the fullname length.
+Question: 1
 
-eg: username = "subhenduthakur", username should be "@subhenduthakur14"
+. Prompt the user to enter their full name.
+. Genetate a username for them based on the input.
+. Start username with @, followed by their full name and ending with the fullname length.
+
+. eg: username = "subhenduthakur", username should be "@subhenduthakur14"
 */
+
+// Answer:
 
 // let fullName = prompt("Type your full name:");
 

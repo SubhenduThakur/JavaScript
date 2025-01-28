@@ -1,7 +1,7 @@
-// Lecture 4 : Arrays
+// -> Lecture 4 : Arrays
 
 /*
-Arrays in JS :
+-> Arrays in JS :
 
 - Collection of items.
 
@@ -88,11 +88,11 @@ All items have an offer of 10% OFF on them. Change the array to store final pric
 
 
 /*
-Array Methods :
+-> Array Methods :
 
 - As we know, strings are immutable, meaning we can’t change them; any changes to a string result
-in a new string being created. However, with arrays, we can change the values using array methods,
-and some methods also return a new array.
+- in a new string being created. However, with arrays, we can change the values using array methods,
+- and some methods also return a new array.
 
 1. push() - add to end / changes value
 2. pop() - delete form end & return. / changes value
@@ -151,11 +151,13 @@ and some methods also return a new array.
 // arr.splice(2); // Everything from index 2 onwards will be deleted.
 // console.log(arr);
 
+/* ------------------------------------------------------------------------------------------------------------- */
+
 /*
-Qs. Create an array to store companies -> "Bloomberg", "Microsoft", "Uber", "Google", "IBM", "Netflix"
-a. Remove the first company from the array
-b. Remove Uber & Add Ola in its place
-c. Add Amazon at the end
+Q. Create an array to store companies -> "Bloomberg", "Microsoft", "Uber", "Google", "IBM", "Netflix"
+. a. Remove the first company from the array
+. b. Remove Uber & Add Ola in its place
+. c. Add Amazon at the end
 */
 
 // let companies = ["Bloomberg", "Microsoft", "Uber", "Google", "IBM", "Netflix"];
@@ -164,9 +166,50 @@ c. Add Amazon at the end
 // companies.push("Amazon");
 // console.log(companies); 
 
+/* ------------------------------------------------------------------------------------------------------------- */
 
 
+let marvelHeros = ["Ironman", "Captain America", "Hulk", "Hawkye", "Black Widow"];
+let dcHeros = ["Superman", "Batman", "Wonder Women", "Aquaman", "Cyborg"];
 
+// (i) Spread Operator :
+
+let allHeros = [...marvelHeros, ...dcHeros];
+console.log(allHeros);
+
+
+// (ii) flat() :
+
+let anotherArray = [1, 2, 3, [4, 5, 6], 7, [8, 9, [10, 11]]];
+// - The flat method creates a new array and does not change the original array
+let flatArray = anotherArray.flat(Infinity);
+console.log(flatArray);
+
+
+// (iii) Array.isArray() :
+// - The Array.isArray() method checks if a given value is an array or not.
+
+console.log(Array.isArray("Subho")); // > false
+console.log(Array.isArray([1, 2, 3])); // > true
+
+// - If given value is not array like "Subho" is not array, so we can covert into array.
+
+
+// (iv) Array.from() :
+// - Covert value into a array.
+
+console.log(Array.from("Subho")); // > [ 'S', 'u', 'b', 'h', 'o' ]
+// - This will converts "Subho" inot a array. 
+
+
+// (v) Array.of() :
+// - Returns a new array from set of elements.
+
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+
+console.log(Array.of(score1, score2, score3)); // > [ 100, 200, 300 ]
 
 
 
