@@ -168,52 +168,52 @@ Q. Create an array to store companies -> "Bloomberg", "Microsoft", "Uber", "Goog
 
 /* ------------------------------------------------------------------------------------------------------------- */
 
-
+/*
 let marvelHeros = ["Ironman", "Captain America", "Hulk", "Hawkye", "Black Widow"];
 let dcHeros = ["Superman", "Batman", "Wonder Women", "Aquaman", "Cyborg"];
 
-// (i) Spread Operator :
-// - Works like concat, it merge elements.
-/*
+(i) Spread Operator :
+- Works like concat, it merge elements.
+
 - The spread operator takes elements from an array or properties from an object and spreads them into another array, object, or function call.
-*/
+
 let allHeros = [...marvelHeros, ...dcHeros];
 console.log(allHeros);
 
 
-// (ii) flat() :
+(ii) flat() :
 
 let anotherArray = [1, 2, 3, [4, 5, 6], 7, [8, 9, [10, 11]]];
-// - The flat method creates a new array and does not change the original array
+- The flat method creates a new array and does not change the original array
 let flatArray = anotherArray.flat(Infinity);
 console.log(flatArray);
 
 
-// (iii) Array.isArray() :
-// - The Array.isArray() method checks if a given value is an array or not.
+(iii) Array.isArray() :
+- The Array.isArray() method checks if a given value is an array or not.
 
 console.log(Array.isArray("Subho")); // > false
 console.log(Array.isArray([1, 2, 3])); // > true
 
-// - If given value is not array like "Subho" is not array, so we can covert into array.
+- If given value is not array like "Subho" is not array, so we can covert into array.
 
 
-// (iv) Array.from() :
-// - Covert value into a array.
+(iv) Array.from() :
+- Covert value into a array.
 
 console.log(Array.from("Subho")); // > [ 'S', 'u', 'b', 'h', 'o' ]
-// - This will converts "Subho" inot a array. 
+- This will converts "Subho" inot a array. 
 
 
-// (v) Array.of() :
-// - Returns a new array from set of elements.
+(v) Array.of() :
+- Returns a new array from set of elements.
 
 let score1 = 100;
 let score2 = 200;
 let score3 = 300;
 
 console.log(Array.of(score1, score2, score3)); // > [ 100, 200, 300 ]
-
+*/
 
 
 
