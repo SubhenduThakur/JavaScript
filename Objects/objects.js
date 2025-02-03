@@ -188,7 +188,7 @@ console.log(merge); // > { a: 1, b: 2 }
 
 
 
-˝
+
 -> Array of Object :
 
 const user = [
@@ -232,7 +232,31 @@ console.log(Object.entries(obj1)); // > [ [ 'a', 1 ], [ 'b', 2 ] ]
 
 console.log(obj1.hasOwnProperty('a')); // > true
 
+
+
+-> Object de-structure :
+
+> Syntax :
+• {key} = object name
+• {key: key nickname} = object name
+
+const obj = {
+	name: "pen",
+	price: "139",
+	productOnline: true,
+}
+
+const { productOnline } = obj;
+console.log(productOnline); // > true
+
+const { productOnline: On } = obj; // > Customize key name, it's like giving a short nickname, it's not changing original key name.
+console.log(On);
+
 */
+
+
+
+
 
 
 
