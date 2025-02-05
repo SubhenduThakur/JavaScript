@@ -1,0 +1,148 @@
+# --------------------------------------------------- QUESTION -------------------------------------------------- #
+
+Q. What is Coercion?
+
+A. Coercion is the automatic or implicit conversion of a value from one data type to another. In JavaScript, this happens when you use certain operators, functions, or conditions that expect a specific type, but JavaScript automatically converts the value to that type.
+
+
+📌 Types of Coercion:
+	1)  TYPE COERCION (OR IPLICIT COERCION) :
+	•	Happens automatically when JavaScript converts a value from one type to another.
+	2)  EXPLICIT COERCION :
+	•	Happens when you manually convert a value to another type using functions or methods.
+
+
+💡 Examples of Type Coercion:
+
+1)  Type Coercion (or Implicit Coercion) :
+
+
+1️⃣ Coercion with Arithmetic Operators :-
+
+When you perform arithmetic operations, JavaScript implicitly converts values to numbers:
+
+    console.log(5 + "5"); // "55" (number is coerced into a string)
+    console.log("5" - 2); // 3 (string "5" is coerced into a number)
+
+	•	In the first example, 5 is coerced into a string, and the result is string concatenation ("55").
+	•	In the second example, "5" is coerced into a number, so the operation results in 3.
+
+
+2️⃣ Coercion with Comparison Operators :-
+
+JavaScript also coerces values when comparing them:
+
+    console.log(0 == false);        // true (0 is coerced into false)
+    console.log("5" == 5);          // true ("5" is coerced into 5)
+    console.log(null == undefined); // true (they are considered loosely equal)
+
+    •	In these examples, JavaScript converts one or both operands to a type that can be compared.
+
+
+🔹 Coercion in Conditional Statements:
+
+In an if statement, JavaScript evaluates the condition based on truthy or falsy values. Coercion happens when a non-Boolean value (e.g., a number or a string) is used directly in the condition.
+
+    let value = "hello";
+    if (value) {
+        console.log("This is truthy!"); // This will run because non-empty strings are truthy
+    }
+
+    let value2 = "";
+    if (value2) {
+        console.log("This is truthy!"); // This won't run because empty string is falsy
+    }
+
+
+	•	In these cases, JavaScript coerces the string values into Booleans for evaluation.
+
+
+
+
+2) EXPLICIT COERCION :
+
+•   You can also explicitly convert a value to another type using built-in functions.
+
+
+1️⃣ To String :
+
+    let number = 123;
+    let string = String(number); // "123"
+
+	•	String() converts the number 123 to the string "123".
+
+
+2️⃣ To Number :
+
+    let str = "123";
+    let num = Number(str); // 123
+
+	•	Number() converts the string "123" to the number 123.
+
+
+3️⃣ To Boolean :
+
+    let value = 0;
+    let booleanValue = Boolean(value); // false
+
+•	Boolean() converts the value 0 to false.
+
+
+
+
+📌 Key Rules of Coercion :
+
+	1.	Falsy values are automatically coerced to false. These include false, 0, "" (empty string), null, undefined, and NaN.
+	2.	Truthy values are coerced to true. All other values (except falsy values) are truthy, such as non-empty strings, non-zero numbers, and objects.
+
+
+
+
+🎯 Summary of Coercion :
+
+	•	Coercion refers to automatic or explicit conversion of values between different types.
+	•	JavaScript implicitly coerces values in operations like arithmetic, comparisons, and conditions.
+	•	You can also explicitly coerce values using functions like String(), Number(), and Boolean().
+
+
+# ---------------------------------------------------- DOUBT ---------------------------------------------------- #
+
+Q. Why ("5" - 2) // 3  and why ("5" + 5) // "55" 
+   Why in addition "5" not coverted in number?
+
+A. 
+
+🔍 Key Concept: Coercion with Arithmetic Operators - 
+
+-> JavaScript handles coercion differently based on the operator used.
+
+	•	Subtraction (-) and other arithmetic operations like multiplication (*) or division (/) always try to convert operands to numbers.
+	•	Addition (+), however, is special. It performs string concatenation when one of the operands is a string.
+
+
+
+
+
+💡 Why does "5" get converted into a number here? ("5" - 2) // 3
+
+	•	The subtraction operator (-) is an arithmetic operator.
+	•	JavaScript knows that subtraction is a mathematical operation, so it coerces both operands to numbers before performing the operation.
+
+NOTE: This happens because arithmetic operations (like -, *, /) force type coercion to numbers.
+
+
+💡 Why doesn’t 5 get converted into a number here?
+
+	•	The addition operator (+) has special behavior.
+	•	When one of the operands is a string, JavaScript performs string concatenation instead of arithmetic.
+
+NOTE: The + operator behaves differently from other arithmetic operators because it handles both “addition” and “string concatenation”. If one operand is a string, the other operand will be coerced into a string, and the result will be concatenation.
+
+
+
+
+🎯 Summary of Differences :
+
+	•	Subtraction (-) and other arithmetic operators will coerce both operands into numbers.
+	•	Addition (+) performs string concatenation if one of the operands is a string, so it coerces the other operand into a string.
+
