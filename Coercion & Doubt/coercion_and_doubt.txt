@@ -133,7 +133,7 @@ A.
 
 	•	The subtraction operator (-) is an arithmetic operator.
 	•	JavaScript knows that subtraction is a mathematical operation, so it coerces both operands to numbers before
-	    performing the operation.
+		performing the operation.
 
 NOTE: This happens because arithmetic operations (like -, *, /) force type coercion to numbers.
 
@@ -154,5 +154,5 @@ be concatenation.
 
 	•	Subtraction (-) and other arithmetic operators will coerce both operands into numbers.
 	•	Addition (+) performs string concatenation if one of the operands is a string, so it coerces the other operand
-	    into a string.
+		into a string.
 
