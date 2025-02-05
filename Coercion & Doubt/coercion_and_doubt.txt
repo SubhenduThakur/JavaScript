@@ -95,7 +95,7 @@ Coercion happens when a non-Boolean value (e.g., a number or a string) is used d
 
 📌 Key Rules of Coercion :
 
-	1.	Falsy values are automatically coerced to false.
+	1.  Falsy values are automatically coerced to false.
 	    These include false, 0, "" (empty string), null, undefined, and NaN.
 	2.	Truthy values are coerced to true. All other values (except falsy values) are truthy,
 	    such as non-empty strings, non-zero numbers, and objects.
