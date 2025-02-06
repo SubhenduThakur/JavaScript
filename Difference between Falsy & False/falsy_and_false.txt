@@ -1,0 +1,171 @@
+# -------------------------------------- DIFFERENCE BETWEEN FALSY AND FLASE ------------------------------------- #
+
+🔍 What Are Falsy Values?
+
+- In JavaScript, falsy values are values that, when converted to a Boolean (true or false), become false.
+  These values are not equal to false, but JavaScript treats them as false when evaluated in a Boolean context
+  (like in an if condition).
+
+
+List of Falsy Values :
+
+	1.	false: Boolean false value.
+	2.	0: Zero (number).
+	3.	"": Empty string.
+	4.	null: Represents “no value” or “no object.”
+	5.	undefined: Variable is declared but not assigned a value.
+	6.	NaN: Not-a-Number value.
+
+
+
+
+🛠 Falsy Value Coercion (Conversion) to Boolean :-
+
+• Here’s how JavaScript treats falsy values :
+
+	Value			Boolean(value)		Explanation
+
+	false			false	            Boolean false itself.
+	0				false				0 is considered falsy in a Boolean context.
+	""				false				Empty string is falsy.
+	null			false				null represents no value, so it is treated as falsy.
+	undefined		false				undefined means variable is not assigned any value.
+	NaN				false				NaN stands for “Not a Number” and is falsy.
+
+
+
+
+🔍 When Are null, undefined, false, 0, "", and NaN Treated as false?
+
+• These values are falsy in JavaScript, meaning they behave like false only in a boolean context.
+
+
+
+👉 When Are They Treated as false?
+
+• They act as false in the following cases:
+
+
+Context	                            Behavior
+
+1. if (value)	                    Falsy values make the condition false
+
+2. while (value)	                Loop does not run for falsy values
+
+3. Boolean(value)	                Explicitly converts falsy values to false
+
+4. !value	                        Negation converts falsy values to true
+
+5. value && otherValue	            Falsy value stops execution & returns itself
+
+6. value ? x : y (Ternary)	        Falsy value picks the else condition (y)
+
+
+
+
+1️⃣ if Statements :
+
+if (null) console.log("Truthy");  
+else console.log("Falsy");  // ✅ "Falsy"
+
+if (undefined) console.log("Truthy");
+else console.log("Falsy");  // ✅ "Falsy"
+
+if (false) console.log("Truthy");
+else console.log("Falsy");  // ✅ "Falsy"
+
+if (0) console.log("Truthy");
+else console.log("Falsy");  // ✅ "Falsy"
+
+if ("") console.log("Truthy");
+else console.log("Falsy");  // ✅ "Falsy"
+
+if (NaN) console.log("Truthy");
+else console.log("Falsy");  // ✅ "Falsy"
+
+- All these values are treated as false, so the else block executes.
+
+
+
+
+2️⃣ Boolean() Function :
+
+console.log(Boolean(null));      // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean(false));     // false
+console.log(Boolean(0));         // false
+console.log(Boolean(""));        // false
+console.log(Boolean(NaN));       // false
+
+- Boolean(value) explicitly converts falsy values into false.
+
+
+
+
+3️⃣ Logical NOT (!) :
+
+console.log(!null);       // true
+console.log(!undefined);  // true
+console.log(!false);      // true
+console.log(!0);          // true
+console.log(!"");         // true
+console.log(!NaN);        // true
+
+- Since these values are falsy, !value converts them to true.
+
+
+
+
+4️⃣ Logical AND (&&) :
+
+console.log(null && "Hello");       // null
+console.log(undefined && "Hello");  // undefined
+console.log(false && "Hello");      // false
+console.log(0 && "Hello");          // 0
+console.log("" && "Hello");         // ""
+console.log(NaN && "Hello");        // NaN
+
+- Falsy values stop the execution and return themselves.
+
+For example:
+	•	false && "Hello" stops at false, so the result is false.
+	•	0 && "Hello" stops at 0, so the result is 0.
+
+
+
+
+5️⃣ Logical OR (||) :
+
+console.log(null || "Hello");       // "Hello"
+console.log(undefined || "Hello");  // "Hello"
+console.log(false || "Hello");      // "Hello"
+console.log(0 || "Hello");          // "Hello"
+console.log("" || "Hello");         // "Hello"
+console.log(NaN || "Hello");        // "Hello"
+
+- Falsy values are ignored, and the first truthy value is returned.
+
+For example:
+	•	false || "Hello" → Since false is falsy, "Hello" is returned.
+	•	0 || "Hello" → Since 0 is falsy, "Hello" is returned.
+
+
+
+
+6️⃣ Ternary Operator (? :) :
+
+console.log(null ? "Truthy" : "Falsy");      // "Falsy"
+console.log(undefined ? "Truthy" : "Falsy"); // "Falsy"
+console.log(false ? "Truthy" : "Falsy");     // "Falsy"
+console.log(0 ? "Truthy" : "Falsy");         // "Falsy"
+console.log("" ? "Truthy" : "Falsy");        // "Falsy"
+console.log(NaN ? "Truthy" : "Falsy");       // "Falsy"
+
+- Since these values are falsy, the else condition ("Falsy") is executed.
+
+
+
+🚀 Key Takeaways :
+
+• Falsy values: null, undefined, false, 0, "", NaN behave like false in boolean contexts.
+• Comparisons (== and ===): These values are not equal to false, except 0 == false.

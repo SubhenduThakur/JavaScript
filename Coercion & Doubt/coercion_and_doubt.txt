@@ -40,6 +40,8 @@ JavaScript also coerces values when comparing them:
 
     •	In these examples, JavaScript converts one or both operands to a type that can be compared.
 
+	
+
 
 🔹 Coercion in Conditional Statements:
 
@@ -155,4 +157,6 @@ be concatenation.
 	•	Subtraction (-) and other arithmetic operators will coerce both operands into numbers.
 	•	Addition (+) performs string concatenation if one of the operands is a string, so it coerces the other operand
 		into a string.
+
+
 
