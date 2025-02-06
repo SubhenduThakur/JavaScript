@@ -337,6 +337,7 @@ Use the reduce method to calculate product of all numbers in the array.
 // console.log("Factorial =", factorial);
 
 
+/* ------------------------------------------------------------------------------------------------------------- */
 
 
 // > A function that sum two numbers :
@@ -369,8 +370,8 @@ function userName(name) {
     return result;
 }
 
-let final = userName(null);
-console.log(final);
+let final1 = userName(null);
+console.log(final1);
 
 
 
@@ -388,7 +389,31 @@ console.log(final);
 • undefined == null (They are same but in (==) loose equal-to)
 
 NOTE: They are not stricly equal to (===) false, they are falsy but not strictly equal to false.
-
 */
+
+
+
+function userName(name) {
+    let undefinedUserName = "Please enter your username";
+    let userOutput = `${name} just logged in.`;
+    let result = name ? userOutput : undefinedUserName;
+    return result;
+}
+
+let final2 = userName(null);
+console.log(final2);
+
+/* 
+> What happend in that situation?
+- null ? userOutput : undefinedUserName; 
+- so, if we pass falsy value in that situation JavaScript implicitly or automatically converts that in boolean value which in that situation is “false”. 
+
+> If you have doubt check “Difference between Falsy & False”.
+
+• If statement automatically converts null, undefined, 0, empty string, NaN Into a false value.
+ */
+
+
+
 
  

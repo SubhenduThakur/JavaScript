@@ -169,3 +169,189 @@ console.log(NaN ? "Truthy" : "Falsy");       // "Falsy"
 
 • Falsy values: null, undefined, false, 0, "", NaN behave like false in boolean contexts.
 • Comparisons (== and ===): These values are not equal to false, except 0 == false.
+
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+
+🔹 Why Are [] (Empty Array) and {} (Empty Object) Truthy?
+
+- Even though they are empty, JavaScript treats arrays ([]) and objects ({}) as truthy values.
+
+
+
+
+✅ Example 1: Empty Array
+
+if ([]) {
+    console.log("Truthy!"); // ✅ Runs
+} else {
+    console.log("Falsy!");
+}
+
+- Why? → [] is an object, and all objects in JavaScript are truthy, regardless of whether they are empty or not.
+
+
+
+
+✅ Example 2: Empty Object
+
+if ({}) {
+    console.log("Truthy!"); // ✅ Runs
+} else {
+    console.log("Falsy!");
+}
+
+- Why? → {} is also an object, and objects are always truthy.
+
+
+
+
+🔹 What About an Empty String ("")?
+
+• ❌ Empty string ("") is falsy.
+
+if ("") {
+    console.log("Truthy!");
+} else {
+    console.log("Falsy!"); // ✅ Runs
+}
+
+
+
+
+- Why? → A string is truthy only if it has at least one character.
+
+if (" ") {  
+    console.log("Truthy!"); // ✅ Runs (Because it has a space!)
+}
+
+
+
+
+🔹 Summary :
+
+
+Value	        Truthy/Falsy?	                Why?
+
+[]	              ✅ Truthy	           Because it’s an object
+{}	              ✅ Truthy	           Because it’s an object
+""	              ❌ Falsy	           Because it’s an empty string
+" " (space)	      ✅ Truthy	           Because it’s a non-empty string
+
+
+🚀 Final Answer
+
+• Objects ({}) and arrays ([]) are always truthy, even if they are empty.
+• Empty strings ("") are falsy, but strings with spaces (" ") are truthy.
+
+
+# ---------------------------------------------------- DOUBT ---------------------------------------------------- #
+
+function userName(name) {
+    let undefinedUserName = "Please enter your username";
+    let userOutput = `${name} just logged in.`;
+    let result = name ? userOutput : undefinedUserName;
+    return result;
+}
+
+let final = userName(null);
+console.log(final);
+
+
+I passed null as argument, that means :
+null ? userOutput : undefinedUserName;
+
+That means :
+false ? userOutput : undefinedUserName;
+
+I have doubt in that point, if condition is false then what I know the work will not executed, please clear my doubt.
+
+If condition is false then how the work is running?
+How it's executing undefinedUserName?
+
+
+
+
+🔹 How Does the Ternary Operator Work?
+
+The ternary operator (condition ? expr1 : expr2) works like this :
+
+	1.	Evaluate the condition (name ? userOutput : undefinedUserName)
+	2.	If name is truthy, return userOutput
+	3.	If name is falsy, return undefinedUserName
+
+
+
+
+🔹 What Happens When You Pass null?
+
+You called the function like this:
+
+let final = userName(null);
+
+
+
+
+• So inside the function, this happens:
+
+let result = null ? userOutput : undefinedUserName;
+
+- Since null is falsy, the ternary operator chooses the second value (undefinedUserName).
+
+
+• It does NOT “skip” execution. Instead, it returns the second value.
+
+
+
+
+🔹 Misconception About false in Conditions :
+
+- You’re thinking “if the condition is false, the code won’t execute.”
+  That’s true for an if statement, but not for a ternary operator.
+
+
+
+
+🔹 Difference Between if and Ternary :
+
+if (false) {
+    console.log("Won't run"); // ❌ This won't execute at all.
+} else {
+    console.log("This will run"); // ✅ Runs
+}
+
+- Here, if (false) skips the first block and runs the else block.
+
+
+
+But in a ternary operator, it always returns one of the two values:
+
+let result = false ? "Will not return this" : "This will return";
+console.log(result); // ✅ Output: "This will return"
+
+• It does not skip execution—it just chooses the second value.
+
+
+
+
+🔹 Answer to Your Doubt
+
+When null is passed:
+
+let result = null ? userOutput : undefinedUserName;
+
+	•	null is falsy
+	•	So it returns undefinedUserName
+	•	undefinedUserName = "Please enter your username"
+
+- So the function returns "Please enter your username", and that’s why you see this output.
+
+
+
+
+🔹 Final Summary :
+
+• The ternary operator always executes one of the two expressions.
+• When false ? X : Y, it chooses Y, it does not “skip” execution.
+• null, undefined, 0, "", NaN, and false are falsy, so in name ? X : Y, they always return Y.
