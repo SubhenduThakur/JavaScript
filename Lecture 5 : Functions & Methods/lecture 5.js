@@ -339,5 +339,56 @@ Use the reduce method to calculate product of all numbers in the array.
 
 
 
+// > A function that sum two numbers :
+function sum(num1, num2) {
+    sum = num1 + num2;
+    return sum;
+}
+
+let result = sum(1, 1);
+console.log(result);
+
+
+
+// > With massage parameters :
+function user(name) {
+    let output = `${name} is logged in.`;
+    return output;
+}
+
+let output = user("samy");
+console.log(output);
+
+
+
+// > With trinary operator :
+function userName(name) {
+    let undefinedUserName = "Please enter your username";
+    let userOutput = `${name} just logged in.`;
+    let result = !name ? undefinedUserName : userOutput;
+    return result;
+}
+
+let final = userName(null);
+console.log(final);
+
+
+
+/* 
+• The logic is : name == undefined 
+
+- undefined = falsy
+- "" (empty string) = falsy
+- null = falsy
+- 0 = falsy
+- false is obviously a falsy.
+
+• “name == undefined” = “!name” is the same. 
+
+• undefined == null (They are same but in (==) loose equal-to)
+
+NOTE: They are not stricly equal to (===) false, they are falsy but not strictly equal to false.
+
+*/
 
  
