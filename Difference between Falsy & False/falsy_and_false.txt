@@ -25,12 +25,12 @@ List of Falsy Values :
 
 	Value			Boolean(value)		Explanation
 
-	false			false	            Boolean false itself.
-	0				false				0 is considered falsy in a Boolean context.
-	""				false				Empty string is falsy.
-	null			false				null represents no value, so it is treated as falsy.
-	undefined		false				undefined means variable is not assigned any value.
-	NaN				false				NaN stands for “Not a Number” and is falsy.
+	false			false	            	Boolean false itself.
+	0		 	false			0 is considered falsy in a Boolean context.
+	""			false			Empty string is falsy.
+	null			false			null represents no value, so it is treated as falsy.
+	undefined		false			undefined means variable is not assigned any value.
+	NaN			false			NaN stands for “Not a Number” and is falsy.
 
 
 
@@ -46,19 +46,19 @@ List of Falsy Values :
 • They act as false in the following cases:
 
 
-Context	                            Behavior
+Context	                             Behavior
 
-1. if (value)	                    Falsy values make the condition false
+1. if (value)	                     Falsy values make the condition false
 
-2. while (value)	                Loop does not run for falsy values
+2. while (value)	             Loop does not run for falsy values
 
-3. Boolean(value)	                Explicitly converts falsy values to false
+3. Boolean(value)	             Explicitly converts falsy values to false
 
-4. !value	                        Negation converts falsy values to true
+4. !value	                     Negation converts falsy values to true
 
-5. value && otherValue	            Falsy value stops execution & returns itself
+5. value && otherValue	             Falsy value stops execution & returns itself
 
-6. value ? x : y (Ternary)	        Falsy value picks the else condition (y)
+6. value ? x : y (Ternary)	     Falsy value picks the else condition (y)
 
 
 
@@ -128,8 +128,8 @@ console.log(NaN && "Hello");        // NaN
 - Falsy values stop the execution and return themselves.
 
 For example:
-	•	false && "Hello" stops at false, so the result is false.
-	•	0 && "Hello" stops at 0, so the result is 0.
+	• false && "Hello" stops at false, so the result is false.
+	• 0 && "Hello" stops at 0, so the result is 0.
 
 
 
@@ -146,8 +146,8 @@ console.log(NaN || "Hello");        // "Hello"
 - Falsy values are ignored, and the first truthy value is returned.
 
 For example:
-	•	false || "Hello" → Since false is falsy, "Hello" is returned.
-	•	0 || "Hello" → Since 0 is falsy, "Hello" is returned.
+	• false || "Hello" → Since false is falsy, "Hello" is returned.
+	• 0 || "Hello" → Since 0 is falsy, "Hello" is returned.
 
 
 
