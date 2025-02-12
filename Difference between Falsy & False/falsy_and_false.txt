@@ -249,8 +249,8 @@ Value	        Truthy/Falsy?	                Why?
 # ---------------------------------------------------- DOUBT ---------------------------------------------------- #
 
 function userName(name) {
-    let undefinedUserName = "Please enter your username";
     let userOutput = `${name} just logged in.`;
+    let undefinedUserName = "Please enter your username";
     let result = name ? userOutput : undefinedUserName;
     return result;
 }
