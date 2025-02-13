@@ -1,0 +1,101 @@
+# ---------------------------------- DIFFERENCE BETWEEN SPREAD & REST OPERATORS --------------------------------- #
+
+
+-> The spread (...) and rest (...) operators both use three dots (...), but they serve opposite purposes in JavaScript.
+
+
+
+
+🔹 Spread Operator (...) 
+
+	•	The spread operator is used to expand or spread elements of an array, object, or string into individual elements.
+	•	It is mainly used for copying and merging arrays or objects.
+
+
+
+📌 Example 1: Expanding an Array
+
+const numbers = [1, 2, 3];
+console.log(...numbers); // Output: 1 2 3 (spread the array elements individually)
+
+
+
+📌 Example 2: Copying an Array (Avoiding Reference Issues)
+
+const originalArray = [10, 20, 30];
+const copiedArray = [...originalArray]; 
+
+console.log(copiedArray); // Output: [10, 20, 30]
+
+
+
+📌 Example 3: Merging Arrays
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const mergedArray = [...arr1, ...arr2];
+console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+
+
+📌 Example 4: Spreading in Objects
+
+const user = { name: "John", age: 25 };
+const updatedUser = { ...user, country: "USA" };
+
+console.log(updatedUser); // Output: { name: "John", age: 25, country: "USA" }
+
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+
+🔹 Rest Operator (...)
+
+	•	The rest operator collects multiple values into an array.
+	•	It is mainly used in function parameters to gather the remaining arguments into an array.
+
+
+
+📌 Example 1: Collecting Function Arguments
+
+function sum(a, b, ...rest) {
+    console.log(a);      // Output: 10
+    console.log(b);      // Output: 20
+    console.log(rest);   // Output: [30, 40, 50]
+}
+
+sum(10, 20, 30, 40, 50);
+
+- Here, a = 10, b = 20, and the rest of the arguments [30, 40, 50] are stored in the rest array.
+
+
+
+📌 Example 2: Destructuring with Rest
+
+const [first, second, ...remaining] = [100, 200, 300, 400, 500];
+console.log(first);     // Output: 100
+console.log(second);    // Output: 200
+console.log(remaining); // Output: [300, 400, 500]
+
+
+
+
+🔥 Key Differences
+
+
+Feature	            Spread (...)	                        Rest (...)
+
+Purpose	            Expands elements	                    Gathers elements
+Where Used?	        Arrays, objects, function calls	        Function parameters, destructuring
+Example             Use	const arr2 = [...arr1];	            function example(...args) {}
+Output Type	        Individual values	                    An array
+
+
+
+
+🚀 Final Summary
+
+	•	Spread (...): Expands an array or object into individual elements.
+	•	Rest (...): Gathers multiple values into an array.
+
