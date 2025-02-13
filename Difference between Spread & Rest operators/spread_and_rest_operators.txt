@@ -86,10 +86,10 @@ console.log(remaining); // Output: [300, 400, 500]
 
 Feature	            Spread (...)	                        Rest (...)
 
-Purpose	            Expands elements	                    Gathers elements
-Where Used?	        Arrays, objects, function calls	        Function parameters, destructuring
-Example             Use	const arr2 = [...arr1];	            function example(...args) {}
-Output Type	        Individual values	                    An array
+Purpose	            Expands elements	                        Gathers elements
+Where Used?	    Arrays, objects, function calls	        Function parameters, destructuring
+Example             Use	const arr2 = [...arr1];	                function example(...args) {}
+Output Type	    Individual values	                        An array
 
 
 
