@@ -2,12 +2,12 @@
 
 /*
 
-Functions in JS :
+-> Functions in JS :
 
 - Block of code that performs a specefic task, can be invoked whenever needed.
 
 
-Functions Definition -
+> Functions Definition -
 
 function functionName() {
     // do some work
@@ -17,9 +17,9 @@ function functionName(param1, param2...) {
     // do some work
 }
 
-Function Call/Invoke -
+> Function Call/Invoke -
 
-functionName();
+• functionName();
 
 */
 
@@ -28,22 +28,21 @@ functionName();
 //     console.log("We are lerning JS");
 // }
 
-// myFunction(); // for work we have to call/invoke the function
+// myFunction(); // > for work we have to call/invoke the function
 
 /*
-- A function’s specific purpose is: if any piece of code is being repeated,
-meaning I have to write it again and again, we can use a function there.
+- A function’s specific purpose is: if any piece of code is being repeated, meaning I have to write it again and again, we can use a function there.
 
 - A function saves us from 'redundancy'(repeat) in our code.
 */
 
-// If we want to print specific massage in function -
+// • If we want to print specific massage in function -
 
-// function myFunction(msg) { // paramete -> input
+// function myFunction(msg) { // > parameter -> input
 //     console.log(msg);
 // }
 
-// myFunction("I love JS"); // argument
+// myFunction("I love JS"); // > argument
 
 
 // Function -> 2 number, sum
@@ -55,7 +54,7 @@ meaning I have to write it again and again, we can use a function there.
 // sum(1, 2);
 
 
-// function with return keyword -
+// > function with return keyword -
 
 // function sum(x, y) {
 //     // local variables -> scope
@@ -67,18 +66,16 @@ meaning I have to write it again and again, we can use a function there.
 // console.log(val);
 
 /* 
-NOTE : 'return' keyword returns only value, the value could be array, a string, a number
-or a object but at the end we can return only one variable.
+> NOTE : 'return' keyword returns only value, the value could be array, a string, a number or a object but at the end we can return only one variable.
 
 - After 'return' keyword if we write any code, that will not be executed.
 
-NOTE : functions parameters (x, y) only exists in blocks {}.
-If we try to print function parameters before block {}, there will be an error.
+> NOTE : functions parameters (x, y) only exists in blocks {}. If we try to print function parameters before block {}, there will be an error.
 */
 
 
 /*
-Arrow Functions :
+-> Arrow Functions :
 
 - Compact way of writing a function.
 
@@ -87,31 +84,30 @@ const functionName = (param1, param2..) => {
 }
 */
 
-// This is normal way of writing function :
+// > This is normal way of writing function :
 // function sum(a, b) {
 //     return a + b;
 // }
 
-// This is the shorten way of writing function :
-// const sum = (a, b) => { // we store function in variable.
+// > This is the shorten way of writing function :
+// const sum = (a, b) => { // > we store function in variable.
 //     return a + b;
 // }
 
-// Multiplication arrow function :
+// • Multiplication arrow function :
 // const mul = (a, b) => {
 //     return a * b;
 // }
 // let val = mul(3, 3);
 // console.log(val);
 
-// const printHello = () => { // we can use arrow function without parameter.
+// const printHello = () => { // > we can use arrow function without parameter.
 //     console.log("hello");
 // }
 
 
 /*
-Qs. Create a function using the "function" keyword that takes a String as an argument & returns the
-number of vowels in the string.
+Q. Create a function using the "function" keyword that takes a String as an argument & returns the number of vowels in the string.
 */
 
 // function countVowel(str) {
@@ -124,7 +120,7 @@ number of vowels in the string.
 //     console.log(count);
 // }
 
-// Create an arrow function to perform the same task.
+// > Create an arrow function to perform the same task.
 
 // const countVowel = (str) => {
 //     let count = 0;
@@ -139,9 +135,9 @@ number of vowels in the string.
 
 /*
 
-forEach Loop in Arrays :
+-> forEach Loop in Arrays :
 
-arr.forEach(callBackFunction)
+• arr.forEach(callBackFunction)
 
 - CallBackFunction here it is a function to execute for each element in the array.
 
@@ -167,7 +163,8 @@ arr.forEach((val)) => {
 
 
 /*
-The forEach callback function has three parameters, which we can use.
+> The forEach callback function has three parameters, which we can use.
+
 (i) value, item we can name it anything, and each index holds a value.
 (ii) idx - means position.
 (iii) arr
@@ -182,16 +179,16 @@ The forEach callback function has three parameters, which we can use.
 
 
 /*
-INTERVIEW QUESTION :
+-> INTERVIEW QUESTION :
+
 Q. What is Higher Order function/method?
-A. Higher Order Function or Higher Order Method is a JavaScript method that either take another 
-function as a parameter inside them or they return another function as their output.
+A. Higher Order Function or Higher Order Method is a JavaScript method that either take another function as a parameter inside them or they return another function as their output.
 */
 
 /*
-Let's Practice :
+-> Let's Practice :
 
-Qs. For a given array of numbers, print the square of each value using the forEach loop.
+Q. For a given array of numbers, print the square of each value using the forEach loop.
 */
 
 // let arr = [1, 2, 3, 4];
@@ -200,26 +197,25 @@ Qs. For a given array of numbers, print the square of each value using the forEa
 //     console.log(square);
 // });
 
-// we can do with another way -
+// • we can do with another way -
 
 // let arr = [1, 2, 3, 4];
-// let square = (val) => { // here we make a function
+// let square = (val) => { // > here we make a function
 //     console.log(val ** 2);
 // }
 
-// arr.forEach(square); // then we used forEach so that the function works for each element in the array.
+// arr.forEach(square); // > then we used forEach so that the function works for each element in the array.
 
 
 /*
 
-Some more Array Methods :
+-> Some more Array Methods :
 
-Map :
+(i) Map :
 
-- Creates a new array with the results of some operation. The value its callback returns are used to 
-form new array.
+- Creates a new array with the results of some operation. The value its callback returns are used to form new array.
 
-arr.map(callbackFnx(value, index, array))
+> arr.map(callbackFnx(value, index, array))
 
 
 let newArr = arr.map((val) => {
@@ -228,11 +224,9 @@ return val * 2;
 
 - 'map' method similar to 'forEach'.
 
-- Just like the ‘forEach’ method works by going to each index of an array and performing 
-some operation for each value, the ‘map’ method does the same job.
+- Just like the ‘forEach’ method works by going to each index of an array and performing some operation for each value, the ‘map’ method does the same job.
 
-- The only difference between ‘forEach’ and ‘map’ is that ‘map’ returns a new array,
-whereas ‘forEach’ does not create a new array—it simply performs the task or calculation.
+- The only difference between ‘forEach’ and ‘map’ is that ‘map’ returns a new array, whereas ‘forEach’ does not create a new array—it simply performs the task or calculation.
 
 */
 
@@ -242,15 +236,15 @@ whereas ‘forEach’ does not create a new array—it simply performs the task 
 // });
 
 // console.log(newNum);
-// console.log(num); // if we print num there will be no change.
+// console.log(num); // > if we print num there will be no change.
 
 
 /*
 
-Filter :
+(ii) Filter :
 
-- Creates a new array of elements that give true for a condition/filter.
-Eg: all even elements
+- Creates a new array of elements that give true for a condition/filter. 
+• Eg: all even elements
 
 
 let newArr = arr.filter(val) => {
@@ -269,7 +263,7 @@ return val % 2 === 0;
 
 /*
 
-Reduce :
+(iii) Reduce :
 
 - Performs some operations & reduces the array to a single value. It returns that single value.
 
@@ -280,10 +274,10 @@ Reduce :
 //     return pre + curr;
 // });
 
-// console.log(sumofNum); // 10
+// console.log(sumofNum); // > 10
 
 
-// If we want to print largest number in array -
+// > If we want to print largest number in array -
 
 // let num = [1, 2, 3, 4];
 // let largestNum = num.reduce((pre, curr) => {
@@ -295,9 +289,9 @@ Reduce :
 
 /*
 
-Let's Practice :
+-> Let's Practice :
 
-Qs. We are given array of marks of students. Filter out  of the marks of students that scored 90+.
+Q. We are given array of marks of students. Filter out  of the marks of students that scored 90+.
 
 */
 
@@ -310,9 +304,10 @@ Qs. We are given array of marks of students. Filter out  of the marks of student
 
 
 /*
-Qs. Take a number n as input from user. Create an array of numbers from 1 to n.
-Use the reduce method to calculate sum of all numbers in the array.
-Use the reduce method to calculate product of all numbers in the array.
+Q. 
+> Take a number n as input from user. Create an array of numbers from 1 to n.
+> Use the reduce method to calculate sum of all numbers in the array.
+> Use the reduce method to calculate product of all numbers in the array.
 */
 
 // let n = prompt("Enter a number :");
@@ -412,6 +407,57 @@ console.log(final2);
 
 • If statement automatically converts null, undefined, 0, empty string, NaN Into a false value.
  */
+
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+
+// -> Fucntions with object and array :
+
+function calculateCartPrice(val1, val2, ...rest) {
+    return { val1, val2, rest };
+}
+
+let myResult = calculateCartPrice(100, 200, 300, 400, 2000);
+console.log(myResult);
+
+
+
+let num = [1, 2, 4];
+console.log(...num); // > 1 2 4
+
+
+
+const user1 = {
+    username: "Subho",
+    age: 24,
+}
+
+const user2 = {
+    username: "Tanushree",
+    age: 23,
+}
+
+function handelObject(anyobject) {
+    console.log(`The username is ${anyobject.username} and the age is ${anyobject.age}`);
+}
+
+handelObject(user2);
+
+
+
+const myArray = [200, 400, 100, 600];
+const marks = [74, 19, 44, 53, 62]
+
+function returnSecondValue(anyarray) {
+    return anyarray[1];
+}
+
+let myOutput = returnSecondValue(marks);
+console.log(myOutput);
+
+
+
 
 
 
