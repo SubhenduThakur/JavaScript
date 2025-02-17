@@ -78,7 +78,7 @@ console.log(obj3);
 
 
 
--> More Declaring Object Method :
+→ More Declaring Object Method :
 
 ✦ First Method :
 
