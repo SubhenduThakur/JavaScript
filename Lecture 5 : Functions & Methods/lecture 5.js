@@ -209,7 +209,7 @@ Q. For a given array of numbers, print the square of each value using the forEac
 
 /*
 
--> Some more Array Methods :
+→ Some more Array Methods :
 
 (i) Map :
 
