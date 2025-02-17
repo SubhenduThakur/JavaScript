@@ -1,0 +1,178 @@
+# -------------------------------- IIFE (Immediately Invoked Function Expression) ------------------------------- #
+
+• An Immediately Invoked Function Expression (IIFE) is a JavaScript function that runs as soon as it is defined.
+  It is often used to create a local scope and avoid polluting the global namespace.
+
+
+▸ Syntax :
+
+• Normal function : 
+
+(function () {
+    // do some work
+})();
+
+
+• Arrow function : 
+
+(() => {
+    // do some work
+})();
+
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+
+let print = () => "Tanushree";
+console.log(print()); ← we have to call/invoke
+
+
+
+• Immediately Invoked :
+
+(() => {
+    console.log("Hey taxi");
+})(); ← Immediately Invoked
+
+
+
+((name) => {
+    console.log("Hello", name);
+})("Subho");
+
+
+
+- An IIFE is written as a function expression wrapped in parentheses, followed by another set of parentheses to
+invoke it immediately.
+
+
+(function() {
+    console.log("This is an IIFE!");
+})();
+
+
+Explanation :
+
+	1.	(function() { ... }) → This is an anonymous function expression inside parentheses.
+	2.	()  → These parentheses immediately invoke the function.
+
+
+
+Why Use IIFE?
+
+✅ Avoids polluting the global scope – Variables inside IIFE are not accessible outside.
+✅ Encapsulates private variables – Used to create a private scope.
+✅ Executes code immediately – No need to manually call the function.
+✅ Useful in module pattern – Often used in modern JavaScript module development.
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+• IIFE avoids pollution, 
+
+(function() {
+    let data = "subho@gmail.com";
+    console.log(data);
+})(); 
+
+and,
+
+function user() {
+    let data = "subho@gmail.com";
+    console.log(data);
+};
+
+user();
+
+‣ What is the difference between them? without IIFE function also prevent polution.
+
+‣ Both IIFE and a regular function with let inside seem to prevent pollution. However, there are some key differences
+between them. Let’s break it down. 
+
+
+
+
+1️⃣ IIFE (Immediately Invoked Function Expression) :
+
+(function () {
+    let data = "subho@gmail.com";
+    console.log(data);
+})(); 
+
+
+◼︎ How It Works:
+
+	•	Immediately Executes    → The function runs as soon as it’s defined.
+	•	Creates a Local Scope   → The data variable exists only inside the IIFE.
+	•	Prevents Pollution      → Since data is scoped within the IIFE, it does not leak into the global scope.
+	•	One-Time Execution      → The IIFE cannot be called again.
+
+
+2️⃣ Regular Function Call :
+
+function user() {
+    let data = "subho@gmail.com";
+    console.log(data);
+};
+
+user();
+
+
+◼︎ How It Works:
+
+	•	Needs to be Called Explicitly   → The function does not run automatically. You must call user() for it to execute.
+	•	Creates a Local Scope           → The data variable is local to the user() function, preventing pollution.
+	•	Can Be Reused                   → You can call user() multiple times to execute the same code again.
+
+
+
+➤ Key Differences Between IIFE and Regular Function :
+
+Feature	            IIFE	                            Regular Function (user())
+
+Execution	        Runs immediately when defined.	    Runs only when called.
+
+Scope	            Encapsulates variables, 	        Also encapsulates variables.
+                    preventing global pollution.
+
+Reusability	        Cannot be called again. 	        Can be called multiple times.
+                    One-time use.
+
+Global Pollution	No pollution.	                    No pollution (if let is used).
+
+
+
+★ So Why Use IIFE If Regular Functions Also Prevent Pollution?
+
+Even though both avoid pollution, IIFE has unique benefits:
+
+	1.	Automatic Execution
+	•	If you don’t want to manually call a function but just want it to run immediately, IIFE is useful.
+
+	2.	One-Time Use (Encapsulation)
+	•	If a function is needed only once (like setting up configuration, initializing values, or handling API calls),
+        IIFE ensures it doesn’t exist after execution.
+
+	3.	Avoiding Function Names in the Global Scope
+	•	Declaring function user() {} still creates a function named user in the global scope.
+	•	IIFE doesn’t add any function names to the global scope, keeping it clean.
+
+
+
+➤ Conclusion
+
+	•	If you need a function that executes immediately and is not reusable, use an IIFE.
+	•	If you need a function that can be called multiple times, use a regular function.
+
+Both methods prevent pollution, but IIFE adds extra protection by running immediately and avoiding function name conflicts
+in the global scope.
+
+
+	•	Regular Function: 
+		Variables inside a regular function stay in scope as long as the function exists
+		(they persist if you call the function multiple times).
+
+	•	IIFE: 
+		Variables inside an IIFE are created and immediately discarded after the function executes, and
+		they do not persist outside of it.
+# --------------------------------------------------------------------------------------------------------------- #
+

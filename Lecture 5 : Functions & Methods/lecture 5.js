@@ -1,13 +1,13 @@
-// -> Lecture 5 : Functions & Methods
+// → Lecture 5 : Functions & Methods
 
 /*
 
--> Functions in JS :
+→ Functions in JS :
 
 - Block of code that performs a specefic task, can be invoked whenever needed.
 
 
-> Functions Definition -
+➢ Functions Definition -
 
 function functionName() {
     // do some work
@@ -17,7 +17,7 @@ function functionName(param1, param2...) {
     // do some work
 }
 
-> Function Call/Invoke -
+➢ Function Call/Invoke -
 
 • functionName();
 
@@ -28,7 +28,7 @@ function functionName(param1, param2...) {
 //     console.log("We are lerning JS");
 // }
 
-// myFunction(); // > for work we have to call/invoke the function
+// myFunction(); // ‣ for work we have to call/invoke the function
 
 /*
 - A function’s specific purpose is: if any piece of code is being repeated, meaning I have to write it again and again, we can use a function there.
@@ -38,11 +38,11 @@ function functionName(param1, param2...) {
 
 // • If we want to print specific massage in function -
 
-// function myFunction(msg) { // > parameter -> input
+// function myFunction(msg) { // ‣ parameter -> input
 //     console.log(msg);
 // }
 
-// myFunction("I love JS"); // > argument
+// myFunction("I love JS"); // ‣ argument
 
 
 // Function -> 2 number, sum
@@ -54,7 +54,7 @@ function functionName(param1, param2...) {
 // sum(1, 2);
 
 
-// > function with return keyword -
+// ➢ function with return keyword -
 
 // function sum(x, y) {
 //     // local variables -> scope
@@ -66,16 +66,16 @@ function functionName(param1, param2...) {
 // console.log(val);
 
 /* 
-> NOTE : 'return' keyword returns only value, the value could be array, a string, a number or a object but at the end we can return only one variable.
+★ NOTE : 'return' keyword returns only value, the value could be array, a string, a number or a object but at the end we can return only one variable.
 
 - After 'return' keyword if we write any code, that will not be executed.
 
-> NOTE : functions parameters (x, y) only exists in blocks {}. If we try to print function parameters before block {}, there will be an error.
+★ NOTE : functions parameters (x, y) only exists in blocks {}. If we try to print function parameters before block {}, there will be an error.
 */
 
 
 /*
--> Arrow Functions :
+→ Arrow Functions :
 
 - Compact way of writing a function.
 
@@ -90,7 +90,7 @@ const functionName = (param1, param2..) => {
 // }
 
 // > This is the shorten way of writing function :
-// const sum = (a, b) => { // > we store function in variable.
+// const sum = (a, b) => { // ‣ we store function in variable.
 //     return a + b;
 // }
 
@@ -101,7 +101,7 @@ const functionName = (param1, param2..) => {
 // let val = mul(3, 3);
 // console.log(val);
 
-// const printHello = () => { // > we can use arrow function without parameter.
+// const printHello = () => { // ‣ we can use arrow function without parameter.
 //     console.log("hello");
 // }
 
@@ -120,7 +120,7 @@ Q. Create a function using the "function" keyword that takes a String as an argu
 //     console.log(count);
 // }
 
-// > Create an arrow function to perform the same task.
+// ➢ Create an arrow function to perform the same task.
 
 // const countVowel = (str) => {
 //     let count = 0;
@@ -135,7 +135,7 @@ Q. Create a function using the "function" keyword that takes a String as an argu
 
 /*
 
--> forEach Loop in Arrays :
+→ forEach Loop in Arrays :
 
 • arr.forEach(callBackFunction)
 
@@ -163,7 +163,7 @@ arr.forEach((val)) => {
 
 
 /*
-> The forEach callback function has three parameters, which we can use.
+➢ The forEach callback function has three parameters, which we can use.
 
 (i) value, item we can name it anything, and each index holds a value.
 (ii) idx - means position.
@@ -179,14 +179,14 @@ arr.forEach((val)) => {
 
 
 /*
--> INTERVIEW QUESTION :
+→ INTERVIEW QUESTION :
 
 Q. What is Higher Order function/method?
 A. Higher Order Function or Higher Order Method is a JavaScript method that either take another function as a parameter inside them or they return another function as their output.
 */
 
 /*
--> Let's Practice :
+→ Let's Practice :
 
 Q. For a given array of numbers, print the square of each value using the forEach loop.
 */
@@ -200,11 +200,11 @@ Q. For a given array of numbers, print the square of each value using the forEac
 // • we can do with another way -
 
 // let arr = [1, 2, 3, 4];
-// let square = (val) => { // > here we make a function
+// let square = (val) => { // ‣ here we make a function
 //     console.log(val ** 2);
 // }
 
-// arr.forEach(square); // > then we used forEach so that the function works for each element in the array.
+// arr.forEach(square); // ‣ then we used forEach so that the function works for each element in the array.
 
 
 /*
@@ -215,7 +215,7 @@ Q. For a given array of numbers, print the square of each value using the forEac
 
 - Creates a new array with the results of some operation. The value its callback returns are used to form new array.
 
-> arr.map(callbackFnx(value, index, array))
+➢ arr.map(callbackFnx(value, index, array))
 
 
 let newArr = arr.map((val) => {
@@ -236,7 +236,7 @@ return val * 2;
 // });
 
 // console.log(newNum);
-// console.log(num); // > if we print num there will be no change.
+// console.log(num); // ‣ if we print num there will be no change.
 
 
 /*
@@ -259,7 +259,7 @@ return val % 2 === 0;
 // });
 
 // console.log(evenArr); 
-// console.log(arr); // there will be no change in old arr.
+// console.log(arr); // ‣ there will be no change in old arr.
 
 /*
 
@@ -274,10 +274,10 @@ return val % 2 === 0;
 //     return pre + curr;
 // });
 
-// console.log(sumofNum); // > 10
+// console.log(sumofNum); // ‣ 10
 
 
-// > If we want to print largest number in array -
+// ➢ If we want to print largest number in array -
 
 // let num = [1, 2, 3, 4];
 // let largestNum = num.reduce((pre, curr) => {
@@ -289,7 +289,7 @@ return val % 2 === 0;
 
 /*
 
--> Let's Practice :
+→ Let's Practice :
 
 Q. We are given array of marks of students. Filter out  of the marks of students that scored 90+.
 
@@ -305,9 +305,9 @@ Q. We are given array of marks of students. Filter out  of the marks of students
 
 /*
 Q. 
-> Take a number n as input from user. Create an array of numbers from 1 to n.
-> Use the reduce method to calculate sum of all numbers in the array.
-> Use the reduce method to calculate product of all numbers in the array.
+➢ Take a number n as input from user. Create an array of numbers from 1 to n.
+➢ Use the reduce method to calculate sum of all numbers in the array.
+➢ Use the reduce method to calculate product of all numbers in the array.
 */
 
 // let n = prompt("Enter a number :");
@@ -335,7 +335,7 @@ Q.
 /* ------------------------------------------------------------------------------------------------------------- */
 
 
-// > A function that sum two numbers :
+// ➢ A function that sum two numbers :
 function sum(num1, num2) {
     sum = num1 + num2;
     return sum;
@@ -346,7 +346,7 @@ console.log(result);
 
 
 
-// > With massage parameters :
+// ➢ With massage parameters : 
 function user(name) {
     let output = `${name} is logged in.`;
     return output;
@@ -357,7 +357,7 @@ console.log(output);
 
 
 
-// > With trinary operator :
+// ➢ With trinary operator :
 function userName(name) {
     let undefinedUserName = "Please enter your username";
     let userOutput = `${name} just logged in.`;
@@ -399,20 +399,20 @@ let final2 = userName(null);
 console.log(final2);
 
 /* 
-> What happend in that situation?
+➢ What happend in that situation?
 - null ? userOutput : undefinedUserName; 
 - so, if we pass falsy value in that situation JavaScript implicitly or automatically converts that in boolean value which in that situation is “false”. 
 
-> If you have doubt check “Difference between Falsy & False”.
+➢ If you have doubt check “Difference between Falsy & False”.
 
 • If statement automatically converts null, undefined, 0, empty string, NaN Into a false value.
  */
 
 
-/* ------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------- Fucntions With Object And Array -------------------------------------- */
 
 
-// -> Fucntions with object and array :
+// → Fucntions with object and array :
 
 function calculateCartPrice(val1, val2, ...rest) {
     return { val1, val2, rest };
@@ -424,7 +424,7 @@ console.log(myResult);
 
 
 let num = [1, 2, 4];
-console.log(...num); // > 1 2 4
+console.log(...num); // ‣ 1 2 4
 
 
 
@@ -457,7 +457,126 @@ let myOutput = returnSecondValue(marks);
 console.log(myOutput);
 
 
+/* --------------------------------------- Scope Level And Mini Hoisting --------------------------------------- */
+
+// → Scope level and mini hoisting :
+
+function one() {
+    const username = "subho";
+
+    function two() {
+        const website = "youtube";
+        console.log(username);
+    }
+
+    two();
+}
+
+one();
 
 
 
+
+console.log(addOne(2));
+function addOne(num) {
+    return num + 1;
+}
+
+
+// > Function Expression :
+// console.log(addTwo(2)); // ! Error
+// const addTwo = function (num) {
+//     return num + 2;
+// }
+
+// • The error occurs because of hoisting and the way functions are declared in JavaScript.
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+// -> Explicit Return (Using {} Requires return)
+
+const anotherAdd = (a, b) => { return a + b; };
+console.log(anotherAdd(5, 2)); // ‣ Output: 7
+
+// • If you use curly braces {}, you must use the “return” keyword.
+
+
+
+
+/*
+-> Implicit return :
+
+• In JavaScript, implicit return occurs when a function automatically returns a value without using the return keyword explicitly. This is commonly used in arrow functions for concise syntax.
+*/
+
+const add = (a, b) => a + b;
+console.log(add(5, 3)); // ‣ Output: 8
+
+
+// • Since the function has only one expression (a + b), JavaScript automatically returns the result.
+// • For no confusion always use parentheses ().
+
+// > Example :
+
+let sumTwo = (a, b) => (a + b);
+console.log(sumTwo(1, 2));
+
+
+
+
+// -> Implicit Return with Objects (Use () to Wrap) :
+
+const getUser = () => ({ name: "John", age: 25 });
+console.log(getUser()); // ‣ Output: { name: "John", age: 25 }
+
+// • Objects must be wrapped in () to prevent confusion with function blocks {}.
+
+
+
+
+// -> Implicit Return in Array Methods :
+
+const numbers = [1, 2, 3, 4];
+const squared = numbers.map(num => num * num);
+console.log(squared); // ➣ Output: [1, 4, 9, 16]
+
+// • The callback function in .map() implicitly returns num * num.
+
+
+
+/* 
+Note:
+
+> For a single parameter, parentheses are optional in arrow functions.
+
+const square = num => num * num;
+console.log(square(4)); // ‣ Output: 16
+
+- Since there’s only one parameter (num), parentheses are not required.
+
+• ✅ With Parentheses (Also Correct)
+
+const square = (num) => num * num;
+console.log(square(4)); // ‣ Output: 16
+
+
+
+> Parentheses are required when there are two or more parameters.
+
+const add = (a, b) => a + b; // ‣ ✅ Correct  
+
+
+
+> Returning an Object (Must Use ())
+
+const getUser = () => ({ name: "Alice", age: 25 });
+
+- Parentheses are required when returning an object, to avoid confusion with function blocks {}.
+
+
+• So, for a single parameter, parentheses are optional, but they don’t cause errors if you use them.
+
+*/
+
+/* ------------------------------------------------------------------------------------------------------------- */
 

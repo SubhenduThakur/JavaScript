@@ -1,7 +1,7 @@
 /*
--> Objects :
+→ Objects :
 
-> There are two ways to declare an object: 
+➢ There are two ways to declare an object: 
 
 (i). Literal.
 (ii). Constructor.
@@ -19,10 +19,10 @@
 
 NOTE:
 
-	>	When an object is created using a “constructor”, it becomes a “singleton”.
+	➢	When an object is created using a “constructor”, it becomes a “singleton”.
 	• Example : Object.create - Constructor Method > “singleton”
 
-	>	When an object is created using literals, it does not become a singleton.
+	➢	When an object is created using literals, it does not become a singleton.
 	• Example : const obj = {} - Literal Method
 
 
@@ -38,8 +38,8 @@ let obj = {
 	lastLogIn: ["Monday", "Friday"],
 }
 
-console.log(obj.name); // > Subhendu
-console.log(obj["email"]); // > subhenduthakur2@gmail.com
+console.log(obj.name); // ‣ Subhendu
+console.log(obj["email"]); // ‣ subhenduthakur2@gmail.com
 
 NOTE: Objects 'keys' are stores as “string”, “key values” we can store as any data type.
 
@@ -48,7 +48,7 @@ NOTE: Objects 'keys' are stores as “string”, “key values” we can store a
 
 
 
--> How i declare that “Symbol” as key in object, that interviewer asks : 
+→ How i declare that “Symbol” as key in object, that interviewer asks : 
 
 let mySym = Symbol("myKey");
 
@@ -56,12 +56,12 @@ let obj2 = {
 	[mySym]: "myKey2",
 }
 
-console.log(obj2); // > { [Symbol(myKey)]: 'myKey2' }
+console.log(obj2); // ‣ { [Symbol(myKey)]: 'myKey2' }
 
 
 
 
--> How to freeze a object?
+→ How to freeze a object?
 
 let obj3 = {
 	company: "Apple",
@@ -80,26 +80,26 @@ console.log(obj3);
 
 -> More Declaring Object Method :
 
-> First Method :
+✦ First Method :
 
 const tinderUser = new Object();
 tinderUser.id = "subho.tinder";
 tinderUser.email = "tinder@gmail.com";
-console.log(tinderUser); // > { id: 'subho.tinder', email: 'tinder@gmail.com' }
+console.log(tinderUser); // ‣ { id: 'subho.tinder', email: 'tinder@gmail.com' }
 
 
 
-> Second Method :
+✦ Second Method :
 
 const bumbleUser = {};
 bumbleUser.id = "subho.bumble";
 bumbleUser.email = "bumble@gmail.com";
-console.log(bumbleUser); // > { id: 'subho.bumble', email: 'bumble@gmail.com' }
+console.log(bumbleUser); // ‣ { id: 'subho.bumble', email: 'bumble@gmail.com' }
 
 
 
 
--> Nesting In Object :
+→ Nesting In Object :
 
 const regularUser = {
 	email: "regular@gmail.com",
@@ -111,19 +111,19 @@ const regularUser = {
 	}
 }
 
-console.log(regularUser.fullName.userfullName.firstName); // > Subhendu
+console.log(regularUser.fullName.userfullName.firstName); // ‣ Subhendu
 
 
 
 
--> Merge Object :
+→ Merge Object :
 
 • The Object.assign() static method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
 
 
 
 
-> Syntax :
+✦ Syntax :
 
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
@@ -131,20 +131,20 @@ const source = { b: 4, c: 5 };
 const returnedTarget = Object.assign(target, source);
 
 console.log(target);
-// Expected output: Object { a: 1, b: 4, c: 5 }
+// ‣ Expected output: Object { a: 1, b: 4, c: 5 }
 
 console.log(returnedTarget === target);
-// Expected output: true
+// ‣ Expected output: true
 
 
 
 
-> Merge :
+➢ Merge :
 
 const obj1 = { 1: "Dublu", 2: "dublu@yahoo.com" };
 const obj2 = { 3: "Puchku", 4: "puchku@gmail.com" };
 
-const merge = Object.assign(obj1, obj2); // > {'1': 'Dublu', '2': 'dublu@yahoo.com', '3': 'Puchku', '4': 'puchku@gmail.com'}
+const merge = Object.assign(obj1, obj2); // ‣ {'1': 'Dublu', '2': 'dublu@yahoo.com', '3': 'Puchku', '4': 'puchku@gmail.com'}
 console.log(obj1);
 
 • obj1 is “target” and obj2 is “source” , “source” object stores in “target” object.
@@ -152,12 +152,12 @@ console.log(obj1);
 
 
 
-> Overwritten :
+➢ Overwritten :
 
 const obj1 = { 1: "Dublu", 2: "dublu@yahoo.com" };
 const obj2 = { 1: "Puchku", 2: "puchku@gmail.com" };
 
-const merge = Object.assign(obj1, obj2); // > { '1': 'Puchku', '2': 'puchku@gmail.com' } -> obj2 ‘Overwritten’ to obj1
+const merge = Object.assign(obj1, obj2); // ‣ { '1': 'Puchku', '2': 'puchku@gmail.com' } -> obj2 ‘Overwritten’ to obj1
 console.log(obj1);
 
 • Properties in the target object are overwritten by properties in the sources if they have the same key. Later sources' properties overwrite earlier ones.
@@ -165,31 +165,31 @@ console.log(obj1);
 
 
 
-> Copy :
+➢ Copy :
 
 const obj1 = { a: 1 };
 const obj2 = { b: 2 };
 const copy = Object.assign({}, obj1, obj2);
-console.log(copy); // > { a: 1, b: 2 }
+console.log(copy); // ‣ { a: 1, b: 2 }
 
 • Basically we're storing obj1 & obj2 in empty object, the {} curly braces acting like “target”
 
 
 
 
-> Spread Operator :
+➢ Spread Operator :
 
 const obj1 = { a: 1 };
 const obj2 = { b: 2 };
 const merge = { ...obj1, ...obj2 };
-console.log(merge); // > { a: 1, b: 2 }
+console.log(merge); // ‣ { a: 1, b: 2 }
 
 • 90% we use that, we don't use Object.assign() that much :)
 
 
 
 
--> Array of Object :
+→ Array of Object :
 
 const user = [
 	{
@@ -213,30 +213,30 @@ const user = [
 	},
 ]
 
-console.log(user[1].id); // > laltu
+console.log(user[1].id); // ‣ laltu
 
 
 
 
--> Object Methods :
+→ Object Methods :
 
 let obj1 = { a: 1, b: 2 };
 
-console.log(Object.keys(obj1)); // > [ 'a', 'b' ]
+console.log(Object.keys(obj1)); // ‣ [ 'a', 'b' ]
 
-console.log(Object.values(obj1)); // > [ 1, 2 ]
+console.log(Object.values(obj1)); // ‣ [ 1, 2 ]
 
-console.log(Object.entries(obj1)); // > [ [ 'a', 1 ], [ 'b', 2 ] ]
+console.log(Object.entries(obj1)); // ‣ [ [ 'a', 1 ], [ 'b', 2 ] ]
 
-> For Checking :
+➢ For Checking :
 
-console.log(obj1.hasOwnProperty('a')); // > true
+console.log(obj1.hasOwnProperty('a')); // ‣ true
 
 
 
--> Object de-structure :
+→ Object de-structure :
 
-> Syntax :
+✦ Syntax :
 • {key} = object name
 • {key: key nickname} = object name
 
@@ -247,9 +247,9 @@ const obj = {
 }
 
 const { productOnline } = obj;
-console.log(productOnline); // > true
+console.log(productOnline); // ‣ true
 
-const { productOnline: On } = obj; // > Customize key name, it's like giving a short nickname, it's not changing original key name.
+const { productOnline: On } = obj; // ‣ Customize key name, it's like giving a short nickname, it's not changing original key name.
 console.log(On);
 
 */
