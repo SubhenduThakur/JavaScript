@@ -320,8 +320,8 @@ third()
 
     third() ↘︎
 
-    |                  |            Second function
     |                  |            First function
+    |                  |            Second function
     |     second()     |
     |     first()      |
     |__________________|
@@ -335,9 +335,9 @@ third()
 --------------------------------------------------------------------------------------------------------------- 
     ↘︎
     
-    |                  |            Third function
-    |     third()      |            Second function
     |     second()     |            First function
+    |     third()      |            Second function
+    |                  |            Third function
     |     first()      |
     |__________________|
     | Global Execution |
