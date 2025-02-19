@@ -90,14 +90,12 @@ Step 1: Assign values to val1 and val2
 
 let val1 = 10;
 let val2 = 5;
-addNum = defined;
+
 
 
 Variable	New Value
 val1	    10
 val2	    5
-addNum      defined
-
 
 
 
