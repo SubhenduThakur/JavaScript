@@ -335,9 +335,9 @@ third()
 --------------------------------------------------------------------------------------------------------------- 
     ↘︎
     
-    |     second()     |            First function
+    |                  |            First function
     |     third()      |            Second function
-    |                  |            Third function
+    |     second()     |            Third function
     |     first()      |
     |__________________|
     | Global Execution |
@@ -347,18 +347,6 @@ third()
 	5.	Then third() is called inside second(), so it is added to the stack.
 	6.	Inside third(), we have console.log("Third function"), which prints: Third function
 
---------------------------------------------------------------------------------------------------------------- 
-
-    |            ↑     |
-    |     third()      |
-    |     second()     |
-    |     first()      |
-    |__________________|
-    | Global Execution |
-    |     Context      |
-    |__________________|
-
-    
 --------------------------------------------------------------------------------------------------------------- 
 
                         ↘︎
