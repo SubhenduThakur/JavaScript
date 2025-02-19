@@ -314,7 +314,7 @@ third()
     |__________________|
 
     1.	first() is called, so it is added to the stack.
-	2.	Inside first(), we have console.log("First function"), which prints: First function
+    2.	Inside first(), we have console.log("First function"), which prints: First function
 
 --------------------------------------------------------------------------------------------------------------- 
 
