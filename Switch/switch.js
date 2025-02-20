@@ -79,6 +79,8 @@ switch (day) {
 - We removed case 2: breakpoint, and when case 2: will match, case 3: definiton also will run, because we didn't add any
 ⎜ breakpoint.
 
+• It will run all code after matched case except ‘defalut’.
+
 ‣ Output: 
 . Tuesday
 . Wednesday
