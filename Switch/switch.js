@@ -55,6 +55,36 @@ switch (day) {
 	•	default is optional but recommended.
 
 
+    
+★ If we don't add break at some point then, next all cases code will be executed by default.
+
+• For example:
+
+let day = 2;
+
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        //break; // ‣ break point is removed
+    case 3:
+        console.log("Wednesday");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
+- We removed case 2: breakpoint, and when case 2: will match, case 3: definiton also will run, because we didn't add any
+⎜ breakpoint.
+
+‣ Output: 
+. Tuesday
+. Wednesday
+
+
+
 
 ➢ Can use multiple cases together:
 
@@ -165,3 +195,5 @@ switch (month) {
 
 ✦ And intentionally fall-through means grouping.
 */
+
+

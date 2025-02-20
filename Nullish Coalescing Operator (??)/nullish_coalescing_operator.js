@@ -31,7 +31,7 @@ console.log(displayName); // ‣ Output: "Guest"
 ➢ Example 2: Difference Between ?? and || →
 
 - Many developers previously used the OR (||) operator to provide default values, but it treats all falsy values
-⎣ (e.g., 0, false, "") as false, which may lead to unintended results.
+⎜ (e.g., 0, false, "") as false, which may lead to unintended results.
 
 
 let score = 0;
