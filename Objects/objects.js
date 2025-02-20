@@ -241,16 +241,32 @@ console.log(obj1.hasOwnProperty('a')); // ‣ true
 • {key: key nickname} = object name
 
 const obj = {
-	name: "pen",
-	price: "139",
-	productOnline: true,
+	fullName: "Subhendu Thakur",
+	age: 24,
+	isOnline: ture;
 }
 
-const { productOnline } = obj;
-console.log(productOnline); // ‣ true
+const { fullName } = obj;
+console.log(fullName); // ‣ true
 
-const { productOnline: On } = obj; // ‣ Customize key name, it's like giving a short nickname, it's not changing original key name.
+const { fullName: name } = obj; // ‣ Customize key name, it's like giving a short nickname, it's not changing original key name.
 console.log(On);
+
+
+
+✦ Key points:
+
+1. The syntax { fullName: name } means:
+	• Take the property “fullName” from the object.
+	• Create a new variable called “name” with its value.
+
+2. The original object remains unchanged.
+
+3. obj.fullName still exists and contains the original value.
+
+4. You can now use “name” as a shorthand to access what was “obj.fullName” You could also destructure without renaming:
+
+➢ Both “obj.fullName” and “name” will have the same value, but they are independent variables. Changing one won't affect the other.
 
 */
 
