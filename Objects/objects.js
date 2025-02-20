@@ -9,7 +9,8 @@
 
 • There is also the concept of “singleton”.
 
-- The simple meaning of singleton is: if we create an object with a “constructor”, then a “singleton object” is created. It is a separate object like itself.
+- The simple meaning of singleton is: if we create an object with a “constructor”, then a “singleton object” is created.
+⎜ It is a separate object like itself.
 
 • But when an object is created in a different way, it does not become a “singleton”; instead, multiple instances of it are created.
 
@@ -118,7 +119,8 @@ console.log(regularUser.fullName.userfullName.firstName); // ‣ Subhendu
 
 → Merge Object :
 
-• The Object.assign() static method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+• The Object.assign() static method copies all enumerable own properties from one or more source objects to a target object.
+⎜ It returns the modified target object.
 
 
 
@@ -160,7 +162,8 @@ const obj2 = { 1: "Puchku", 2: "puchku@gmail.com" };
 const merge = Object.assign(obj1, obj2); // ‣ { '1': 'Puchku', '2': 'puchku@gmail.com' } -> obj2 ‘Overwritten’ to obj1
 console.log(obj1);
 
-• Properties in the target object are overwritten by properties in the sources if they have the same key. Later sources' properties overwrite earlier ones.
+• Properties in the target object are overwritten by properties in the sources if they have the same key. Later sources'
+⎜ properties overwrite earlier ones.
 
 
 

@@ -176,7 +176,8 @@ let dcHeros = ["Superman", "Batman", "Wonder Women", "Aquaman", "Cyborg"];
 
 • Works like concat, it merge elements.
 
-• The spread operator takes elements from an array or properties from an object and spreads them into another array, object, or function call.
+• The spread operator takes elements from an array or properties from an object and spreads them into another array,
+⎜ object, or function call.
 
 let allHeros = [...marvelHeros, ...dcHeros];
 console.log(allHeros);

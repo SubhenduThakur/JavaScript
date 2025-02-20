@@ -33,7 +33,77 @@ List of Falsy Values :
 	NaN			false			NaN stands for “Not a Number” and is falsy.
 
 
+----------------------------------------- Quick Recap null & undefined ---------------------------------------- 
 
+Expression				Result	 	 Explanation
+
+0 == false				✅ true		false is coerced to 0, and 0 == 0 is true.
+"" == false				✅ true		"" (empty string) is coerced to 0, and 0 == 0 is true.
+null == false			❌ false		null is not coerced into false or 0.
+undefined == false		❌ false		undefined is not coerced into false or 0.
+
+
+‣ Only “0 and empty string” ("") is loosly equal to (==) ‘false’.
+
+‣ “null & undefined” are ‘falsy’ but not loosly equal to (==) ‘false’
+
+‣ And “Nan” is not loosely equal to (==) anyone. 
+
+NOTE : Only null & undefined is loosely equal to (==) true.
+
+
+
+
+🔹 Why null and undefined Are Treated Similarly?
+
+Both null and undefined represent an absence of a value in JavaScript, but in different ways:
+
+	•	null → Represents an “Explecit / Intentional Absence” of a value.
+	•	undefined → Represents an “Implicit / Unintentional Absence”.
+
+Since both indicate “no value,” JavaScript makes them loosely equal (==).
+
+
+➢ null and undefined both represent, an absence of value.
+
+
+
+
+1. null → I “Explicitly” (manually) assigned absence.
+
+- null represents complete emptiness—it’s an intentional absence of value.
+
+let x = null;
+console.log(x); // null
+
+• Developers manually assign null when they want to indicate that “there is no value.”
+
+
+
+2. undefined → JavaScript “Implicitly” (automatically) assigned absence to “uninitialized variables”.
+
+- undefined means something is expected to be there but has not been assigned a value yet.
+
+let x;
+console.log(x); // undefined
+
+
+
+
+🔹 Abstract Equality Algorithm (==)
+
+Here’s how JavaScript processes loose equality:
+
+	1.	If the values are of the same type, compare them directly.
+	2.	If one is null and the other is undefined, return true. ✅
+	3.	If one is a number and the other is a string, convert the string to a number and compare.
+	4.	If one is a boolean, convert it to a number and compare.
+	5.	If an object is compared with a primitive, convert the object to a primitive and compare.
+	6.	Else, return false.
+
+- Since Rule #2 explicitly states that null == undefined should return true, JavaScript follows this behavior.
+
+--------------------------------------------------------------------------------------------------------------- 
 
 🔍 When Are null, undefined, false, 0, "", and NaN Treated as false?
 
@@ -171,7 +241,7 @@ console.log(NaN ? "Truthy" : "Falsy");       // "Falsy"
 • Comparisons (== and ===): These values are not equal to false, except 0 == false.
 
 
-# --------------------------------------------------------------------------------------------------------------- #
+--------------------------------------------------------------------------------------------------------------- 
 
 
 🔹 Why Are [] (Empty Array) and {} (Empty Object) Truthy?
@@ -246,7 +316,7 @@ Value	        Truthy/Falsy?	                Why?
 • Empty strings ("") are falsy, but strings with spaces (" ") are truthy.
 
 
-# ---------------------------------------------------- DOUBT ---------------------------------------------------- #
+---------------------------------------------------- DOUBT ---------------------------------------------------- 
 
 function userName(name) {
     let userOutput = `${name} just logged in.`;
@@ -355,3 +425,5 @@ let result = null ? userOutput : undefinedUserName;
 • The ternary operator always executes one of the two expressions.
 • When false ? X : Y, it chooses Y, it does not “skip” execution.
 • null, undefined, 0, "", NaN, and false are falsy, so in name ? X : Y, they always return Y.
+
+--------------------------------------------------------------------------------------------------------------- 

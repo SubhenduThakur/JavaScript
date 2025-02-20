@@ -31,7 +31,8 @@ function functionName(param1, param2...) {
 // myFunction(); // ‣ for work we have to call/invoke the function
 
 /*
-- A function’s specific purpose is: if any piece of code is being repeated, meaning I have to write it again and again, we can use a function there.
+- A function’s specific purpose is: if any piece of code is being repeated, meaning I have to write it again and again,
+⎜ we can use a function there.
 
 - A function saves us from 'redundancy'(repeat) in our code.
 */
@@ -66,11 +67,13 @@ function functionName(param1, param2...) {
 // console.log(val);
 
 /* 
-★ NOTE : 'return' keyword returns only value, the value could be array, a string, a number or a object but at the end we can return only one variable.
+★ NOTE : 'return' keyword returns only value, the value could be array, a string, a number or a object but at the end we can
+☆         return only one variable.
 
 - After 'return' keyword if we write any code, that will not be executed.
 
-★ NOTE : functions parameters (x, y) only exists in blocks {}. If we try to print function parameters before block {}, there will be an error.
+★ NOTE : functions parameters (x, y) only exists in blocks {}. If we try to print function parameters before block {},
+☆        there will be an error.
 */
 
 
@@ -107,7 +110,8 @@ const functionName = (param1, param2..) => {
 
 
 /*
-Q. Create a function using the "function" keyword that takes a String as an argument & returns the number of vowels in the string.
+Q. Create a function using the "function" keyword that takes a String as an argument & returns the number of vowels
+ . in the string.
 */
 
 // function countVowel(str) {
@@ -182,7 +186,8 @@ arr.forEach((val)) => {
 → INTERVIEW QUESTION :
 
 Q. What is Higher Order function/method?
-A. Higher Order Function or Higher Order Method is a JavaScript method that either take another function as a parameter inside them or they return another function as their output.
+A. Higher Order Function or Higher Order Method is a JavaScript method that either take another function as a parameter
+⎜  inside them or they return another function as their output.
 */
 
 /*
@@ -224,9 +229,11 @@ return val * 2;
 
 - 'map' method similar to 'forEach'.
 
-- Just like the ‘forEach’ method works by going to each index of an array and performing some operation for each value, the ‘map’ method does the same job.
+- Just like the ‘forEach’ method works by going to each index of an array and performing some operation for each value,
+⎜ the ‘map’ method does the same job.
 
-- The only difference between ‘forEach’ and ‘map’ is that ‘map’ returns a new array, whereas ‘forEach’ does not create a new array—it simply performs the task or calculation.
+- The only difference between ‘forEach’ and ‘map’ is that ‘map’ returns a new array, whereas ‘forEach’ does not create
+⎜ a new array—it simply performs the task or calculation.
 
 */
 
@@ -401,7 +408,8 @@ console.log(final2);
 /* 
 ➢ What happend in that situation?
 - null ? userOutput : undefinedUserName; 
-- so, if we pass falsy value in that situation JavaScript implicitly or automatically converts that in boolean value which in that situation is “false”. 
+- so, if we pass falsy value in that situation JavaScript implicitly or automatically converts that in boolean value which
+⎣ in that situation is “false”. 
 
 ➢ If you have doubt check “Difference between Falsy & False”.
 
@@ -506,7 +514,8 @@ console.log(anotherAdd(5, 2)); // ‣ Output: 7
 /*
 -> Implicit return :
 
-• In JavaScript, implicit return occurs when a function automatically returns a value without using the return keyword explicitly. This is commonly used in arrow functions for concise syntax.
+• In JavaScript, implicit return occurs when a function automatically returns a value without using the return keyword
+⎜ explicitly. This is commonly used in arrow functions for concise syntax.
 */
 
 const add = (a, b) => a + b;

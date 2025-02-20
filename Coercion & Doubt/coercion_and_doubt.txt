@@ -34,7 +34,7 @@ When you perform arithmetic operations, JavaScript implicitly converts values to
 
 JavaScript also coerces values when comparing them:
 
-    console.log(0 == false);        // true (0 is coerced into false)
+    console.log(0 == false);        // true (false is coerced into 0)
     console.log("5" == 5);          // true ("5" is coerced into 5)
     console.log(null == undefined); // true (they are considered loosely equal)
 
