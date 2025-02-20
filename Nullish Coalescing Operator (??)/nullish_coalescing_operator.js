@@ -25,10 +25,6 @@ let displayName = username ?? defaultName;
 console.log(displayName); // ‣ Output: "Guest"
 
 - Here, since username is null, defaultName is assigned to displayName.
-⇡ i;m talii
-⇡ aslkewo
-
-- thooh
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -70,6 +66,17 @@ console.log(result); // ‣ Output: "Default User"
 
 ------------------------------------------------------------------------------------------------------------- */
 
+let score = 0;
+
+console.log(score || 100); // ‣ Output: 100 (because 0 is falsy)
+console.log(score ?? 100); // ‣ Output: 0   (because 0 is NOT null/undefined)
+
+
+
+let name = null;
+let fallback = "Guest";
+
+console.log(fallback ?? name); // ‣ Output: "Guest"
 
 
 
