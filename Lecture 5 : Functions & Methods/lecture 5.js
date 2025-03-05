@@ -409,7 +409,7 @@ console.log(final2);
 ➢ What happend in that situation?
 - null ? userOutput : undefinedUserName; 
 - so, if we pass falsy value in that situation JavaScript implicitly or automatically converts that in boolean value which
-⎣ in that situation is “false”. 
+⎜ in that situation is “false”. 
 
 ➢ If you have doubt check “Difference between Falsy & False”.
 
@@ -491,7 +491,7 @@ function addOne(num) {
 }
 
 
-// > Function Expression :
+// ➢ Function Expression :
 // console.log(addTwo(2)); // ! Error
 // const addTwo = function (num) {
 //     return num + 2;
@@ -525,7 +525,7 @@ console.log(add(5, 3)); // ‣ Output: 8
 // • Since the function has only one expression (a + b), JavaScript automatically returns the result.
 // • For no confusion always use parentheses ().
 
-// > Example :
+// ➢ Example :
 
 let sumTwo = (a, b) => (a + b);
 console.log(sumTwo(1, 2));
@@ -556,7 +556,7 @@ console.log(squared); // ➣ Output: [1, 4, 9, 16]
 /* 
 Note:
 
-> For a single parameter, parentheses are optional in arrow functions.
+➢ For a single parameter, parentheses are optional in arrow functions.
 
 const square = num => num * num;
 console.log(square(4)); // ‣ Output: 16
@@ -570,13 +570,13 @@ console.log(square(4)); // ‣ Output: 16
 
 
 
-> Parentheses are required when there are two or more parameters.
+➢ Parentheses are required when there are two or more parameters.
 
 const add = (a, b) => a + b; // ‣ ✅ Correct  
 
 
 
-> Returning an Object (Must Use ())
+➢ Returning an Object (Must Use ())
 
 const getUser = () => ({ name: "Alice", age: 25 });
 
