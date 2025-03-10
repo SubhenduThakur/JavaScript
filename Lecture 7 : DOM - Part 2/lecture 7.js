@@ -38,7 +38,7 @@ Attributes
 
 /*
 
-» This is how we chage style on JS.
+» This is how we change style on JS.
 » In JavaScript, we can change many properties like style, attributes, and text.
 » If we want, we can make changes to our elements directly in JavaScript without modifying 
 the HTML or CSS.
@@ -147,7 +147,7 @@ HTML Exampel :
 
 
 /*
-HTML Exampel :
+HTML Example :
 
 <body>
     <div>
