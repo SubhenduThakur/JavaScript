@@ -212,7 +212,7 @@ Qs. Create a toggle button that changes the screen to dark-mode when clicked & l
 clicked again.
 */
 
-let btn = document.querySelector("#btn"); 
+let btn = document.querySelector("#btn");
 currMode = "light";
 
 // First Way: Style through JS
@@ -262,4 +262,267 @@ btn3.addEventListener("mouseout", () => {
     div.classList.remove("dark");
 });
 
+/* ------------------------------------------------------------------------------------------------------------- */
 
+/* 
+
+→ 1. type
+
+• When an event occurs, JavaScript generates an Event object that contains information about the event. The type
+⎜ property allows you to check what kind of event was triggered.
+
+✦ Syntax : event.type
+
+
+*/
+
+/*
+document.addEventListener("click", function (event) {
+    console.log(event.type); // ‣ Output: "click"
+});
+
+- In the whole document, wherever i click log event type.
+
+*/
+function handleEvent(event) {
+    if (event.type === "click") {
+        console.log("Element clicked!");
+    } else if (event.type === "mouseover") {
+        console.log("Mouse over the element!");
+    }
+}
+
+let box1 = document.querySelector("#box1");
+
+box1.addEventListener("click", handleEvent);
+box1.addEventListener("mouseover", handleEvent);
+
+/* 
+-------------------------------------------------------------------------------------------------------------
+
+
+ → 2. timeStamp 
+
+ • The timestamp property of an event object returns the time (in milliseconds) at which the event was created.
+ ⎜ The value is relative to the performance.timeOrigin or the start of the document’s lifetime.
+
+ ✦ Syntax : event.timeStamp
+
+
+
+*/
+
+function timeStamp(e) {
+    console.log(e.timeStamp);
+}
+box1.addEventListener("click", timeStamp);
+
+// NOTE: (The timestamp value will vary depending on when the event occurs.)
+
+/* 
+-------------------------------------------------------------------------------------------------------------
+
+
+→ 3. preventDefault() and defaultPrevented()
+
+
+ ➢ preventDefault()
+    -	It prevents the default action of an event.
+    -	Used inside an event listener to stop behaviors like form submission, link navigation, or right-click menus.
+
+    ✦ Syntax : event.preventDefault()
+
+
+
+*/
+
+let username = document.querySelector(".username");
+username.addEventListener("submit", (e) => {
+    e.preventDefault(); // Stops the form from submitting
+    console.log("Form submission prevented!");
+})
+
+/* 
+ --------------------------------------------------------------------------
+
+
+ ➢ defaultPrevented()
+    -	It checks whether preventDefault() was called on the event.
+    -	Returns true if preventDefault() was called; otherwise, returns false.
+
+    ✦ Syntax : event.defaultPrevented()
+
+
+
+*/
+
+let password = document.querySelector(".password");
+password.addEventListener("submit", (e) => {
+    console.log(e.defaultPrevented); // Output: false (before calling preventDefault)
+    e.preventDefault();
+    console.log(e.defaultPrevented); // Output: true (after preventDefault is called)
+});
+
+/* 
+ --------------------------------------------------------------------------
+
+
+ ✦ Summary
+    •	Use preventDefault() to stop an event’s default action.
+    •	Use defaultPrevented to check if preventDefault() was already called.
+
+
+-------------------------------------------------------------------------------------------------------------
+*/
+/* 
+
+→ target
+
+• The target property of an event object (event.target) refers to the exact element that triggered the event.
+
+NOTE: Whenever and wherever you will click, e.target will target that element. After targeting it, You can manipulate that element in any way want. 
+
+• for example: e.target.style or e.target.(whatever I want to manipulate).
+
+✦ Syntax : event.target
+
+
+--------------------------------------------------------------------------
+*/
+
+
+// ➢ Example 1: Click Event on Multiple Buttons
+
+document.addEventListener("click", function (event) {
+    console.log("Clicked Element:", event.target);
+});
+
+/* 
+
+
+
+- Clicking Button 1 logs: <button id="btn1">Button 1</button>
+- Clicking Button 2 logs: <button id="btn2">Button 2</button>
+
+
+--------------------------------------------------------------------------
+*/
+
+
+// ➢ Example 2: Changing Background Color of Clicked Element
+
+document.addEventListener("click", function (event) {
+    event.target.style.backgroundColor = "yellow"; // Changes background of clicked element
+});
+
+/*
+
+
+
+- When you select the document and add an event listener, it listens for clicks anywhere on the page. Wherever you click,
+⇡ it targets that element and changes its color to yellow.
+
+
+--------------------------------------------------------------------------
+*/
+
+
+// ➢ Example 3: Targeting Inputs Inside a Element
+
+divBox = document.querySelector("#divBox");
+divBox.addEventListener("click", (e) => {
+    console.log("Clicked Element:", e.target.id);
+})
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+let vanish = document.querySelector(".vanish");
+let vBox = document.querySelectorAll(".vBox");
+
+
+vanish.addEventListener("click", (e) => {    
+    if (e.target.classList.contains("vBox")) {
+        e.target.style.display = "none";
+    }
+})
+
+
+// vBox.forEach((val) => {
+//     val.addEventListener("click", e => {
+//         val.style.display = "none";
+//     })
+// });
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+// → shiftKey, ctrlKey & altKey
+
+document.addEventListener("keydown", e => {
+    if (e.shiftKey) {
+        console.log("Shift key is pressed");
+    }
+    if (e.ctrlKey) {
+        console.log("Control key is pressed");
+    }
+    if (e.altKey) {
+        console.log("Alt key is pressed");
+    }
+})
+
+/* 
+
+    1. “keydown” for all keyboard keys. (inclued : Shift, Ctrl, Alt, Enter, Backspace, Arrow keys, etc.)
+
+    2. “keypress” for only printable characters
+        	•	Alphabets (a, b, c, … Z)
+	        •	Numbers (0-9)
+	        •	Symbols (@, #, $, %, etc.)
+	        •	Space ( )
+
+
+*/
+
+
+/* 
+
+→ Event Propagation (The Big Picture)
+
+➢ When you click an element, the event doesn’t just stay there. It travels through the DOM in two phases:
+	1.	Event Capturing (Trickling Down) → From Parent to Child
+	2.	Event Bubbling (Rising Up) → From Child to Parent
+
+
+    (i) Event Bubbling (Inside → Outside)
+	•	The event starts from the target (clicked element) and bubbles up to its ancestors (parent, grandparent, etc.).
+	•	Default behavior in JavaScript.
+	•	Useful for handling events on parent elements instead of adding multiple listeners.
+
+    (ii) Event Capturing (Outside → Inside)
+	•	The event starts from the topmost parent and goes down to the target element.
+	•	Not used by default, but can be activated using { capture: true }.
+
+→ Event Delegation (Smart Trick 🎯)
+	•	Instead of adding event listeners to each child element, attach one listener to the parent and check which child was clicked using e.target.
+	•	Works best when elements are dynamically added (e.g., adding buttons via JavaScript).
+
+
+
+
+✦ Summury :
+
+→ Event Propagation:
+	•	How events travel in the DOM (Capturing → Bubbling).
+
+        (i) Event Bubbling:
+            •	The event goes from child to parent (inside → outside).
+            •	Default behavior in JavaScript.
+
+        (ii) Event Capturing:
+            •	The event goes from parent to child (outside → inside).
+            •	Use { capture: true } to enable.
+
+→ Event Delegation:
+	•	Add one event listener to a parent and handle child events using e.target.
+	•	Best for dynamic elements.
+
+*/

@@ -2,17 +2,17 @@
 
 /* 
 
-The 3 Musketers of Web Devolopment -
+The 3 Musketeers of Web Development -
 
 (i) HTML - structure
 (ii) CSS - style
 (iii) JS - logic
 
 (i) HTML (Highper Text Markup Language)
-- Use for content, heading, button, paragaraph, etc.
+- Use for content, heading, button, paragraph, etc.
 
 (ii) CSS (Cascading Style Sheets)
-- Used for website styling, background colors, button slyle, text color, effect, moving elements, etc.
+- Used for website styling, background colors, button style, text color, effect, moving elements, etc.
 
 (iii) JS (JavaScript)
 - Working with JavaScript involves adding logic to the website,
@@ -62,7 +62,7 @@ HTML -> JS Access -> object -> document
 - And within this document, we can access the HTML. 
 
 console.log -> print object as an element.
-console.dir -> document -> propeties, method
+console.dir -> document -> properties, method
 
 NOTE : DOM is representation of HTML in JavaScript.
 */
