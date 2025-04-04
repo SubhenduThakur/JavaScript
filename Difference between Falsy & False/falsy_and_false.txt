@@ -33,6 +33,13 @@ List of Falsy Values :
 	NaN			false			NaN stands for “Not a Number” and is falsy.
 
 
+	Only false, empty string and empty array are loosely equals to (==) 0.
+	false == 0
+	"" == 0
+	[] == 0
+
+
+
 ----------------------------------------- Quick Recap null & undefined ---------------------------------------- 
 
 Expression				Result	 	 Explanation

@@ -8,7 +8,7 @@ A. Coercion is the automatic or implicit conversion of a value from one data typ
 
 
 📌 Types of Coercion:
-	1) TYPE COERCION (OR IPLICIT COERCION) :
+	1) TYPE COERCION (OR IMPLICIT COERCION) :
 	•  Happens automatically when JavaScript converts a value from one type to another.
 	2) EXPLICIT COERCION :
 	•  Happens when you manually convert a value to another type using functions or methods.
@@ -39,9 +39,6 @@ JavaScript also coerces values when comparing them:
     console.log(null == undefined); // true (they are considered loosely equal)
 
     • In these examples, JavaScript converts one or both operands to a type that can be compared.
-
-	
-
 
 🔹 Coercion in Conditional Statements:
 
@@ -115,7 +112,7 @@ Coercion happens when a non-Boolean value (e.g., a number or a string) is used d
 # ---------------------------------------------------- DOUBT ---------------------------------------------------- #
 
 Q. Why ("5" - 2) // 3  and why ("5" + 5) // "55" 
-   Why in addition "5" not coverted in number?
+   Why in addition "5" not converted in number?
 
 A. 
 
@@ -158,5 +155,4 @@ be concatenation.
 	• Addition (+) performs string concatenation if one of the operands is a string, so it coerces the other operand
 	  into a string.
 
-
-
+# --------------------------------------------------------------------------------------------------------------- #
