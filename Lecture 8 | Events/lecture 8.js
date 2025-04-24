@@ -471,7 +471,7 @@ document.addEventListener("keydown", e => {
 
 /* 
 
-    1. “keydown” for all keyboard keys. (inclued : Shift, Ctrl, Alt, Enter, Backspace, Arrow keys, etc.)
+    1. “keydown” for all keyboard keys. (include : Shift, Ctrl, Alt, Enter, Backspace, Arrow keys, etc.)
 
     2. “keypress” for only printable characters
         	•	Alphabets (a, b, c, … Z)
