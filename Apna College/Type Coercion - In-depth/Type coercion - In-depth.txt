@@ -1,0 +1,228 @@
+# ------------------------------ Understanding Type Coercion & Operator Precedence ------------------------------ #
+
+• Today, we will learn some tricky examples to understand when and how Type Coercion & Operator Precedence happen.
+
+
+What is Type Coercion?
+
+	•	Type Coercion (or implicit coercion) is when the JavaScript engine automatically converts a value from
+                one type to another to evaluate an expression and perform the operation.
+
+	•	This happens before the operation if the operator requires a specific type.
+
+What is Operator Precedence?
+
+	•	Operator Precedence determines the order in which operators are evaluated in an expression.
+
+	•	Operators with higher precedence are executed before those with lower precedence.
+
+        •       It will follow the PEMDAS rule :
+                Parenthesis ()
+                Exponentiation **
+                Multiplication *
+                Division /
+                Addition +
+                Subtraction -
+
+In Mathematics we have BODMAS and similarly in mostly programming languages we have PEMDAS.
+
+⭐️ The postfix and prefix operator comes before exponentiation the Unary Plus and Negation also inside of Prefix Operators,
+   so to remember I call it : P PoPre EMDAS.
+
+                P → Parenthesis ()
+
+                Po → Postfix Operators
+                Pre → Prefix Operators 
+
+                E → Exponentiation **
+                M → Multiplication *
+                D → Division /
+                A → Addition +
+                S → Subtraction -
+
+But, there are two rules CONCATENATION rule and ARITHMETIC rule (I made that for better understanding), When JS engine evaluate something it will follow the Operator Precedence
+Hierarchy, As "P PoPre EMDAS" we can see inside Prefix Operators we have Unary Operators and after that we have "EMDAS".
+So, it will follow hierarchy (top to bottom).
+
+What is Unary Operator ?
+	•	An operator that operates on a single operand.
+	•	Examples: +, -, ++, --, !, typeof, void, delete.
+
+CONCATENATION RULE : If any of two operands are string and the main operator is addition (+), it perform the String Concatenation.
+                     It doesn't matter it is “numeric-string” or “non-numeric-string”.
+                     The First step will be “Type Coercion”, it convert the other operand into string.
+
+                     NOTE : It will happen only when one of operand is string.
+
+                     But here is a EXCEPTION :
+                     If you have one or more operator before a operand, remind that it is unary negation or plus, it negative or positive.
+                     Not as usual subtraction or addition, and unary operators comes inside of Prefix Operators.
+                     So, it will follow the hierarchy.
+
+
+                     "1" + - + - "2" // "1" + (- (+ (-"2")))
+
+                     If any string contains unary negation or unary plus, it will convert that string operand into a number, because unary
+                     negation or plus can not assign to a string, it is for numbers, that's why it will converted into a number.
+
+                     So, what is the step by step process here?
+
+                     1. JavaScript sees both are strings and also we have addition (+) as main operator, and lots of unary operators, so JS engine
+                        follows the hierarchy and evaluate unary operators first.
+
+                             And he evaluate the “Unary Negation and Plus”.
+
+                             "1" + (- (+ (-"2"))) 
+                             "1" + (- (+ (-2))) // he converted the string into a number.
+                             "1" + (- (-2)) // he is evaluating unary plus and negation.
+                             "1" + 2 // finally he gets two operands, now we have addition (+) and a string ("1"), so the CONCATENATION rule is applied
+
+                             He decided concatenation, because we have a string ("1") and addition (+) then a number (1).
+                             And as per CONCATENATION rule the concatenation should happen, so he performed that and we get :
+                                
+                             OUTPUT : 12
+
+
+ARITHMETIC  RULE : If the main operator is except addition (+) any operator (-, *, /, **, %)  it will perform the Arithmetic Operation.
+
+                            What if we have except addition (+), one of rest operators (-, *, /, **, %) and also have string?
+                            It will perform Type Coercion first, then arithmetic operation.
+
+                                    1 - "2"
+                                    1 - 2
+                                    -1 // Output
+
+                                    "2" - 1
+                                    2 - 1
+                                    1 // Output
+                        
+                            What if we have one or more Unary Negation or Plus and also Subtraction?
+
+                            Whereas we have a subtraction, as we know he will proceed that according hierarchy.
+                            First he will evaluate the unary operators.
+
+                            "2" - (+ (- (+ (- (-1))))) 
+                            "2" - (+ (- (+ (+1)))) // Unary operators will evaluated first
+                            "2" - (+ (- (+1))) 
+                            "2" - (+ (-1))
+                            "2" - (-1) // now we have subtraction, and as per ARITHMETIC rule will be applied.
+                            2 - (-1) // it will convert the string into a number
+                            2 + 1
+                            3
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+
+console.log("a" + - 1); // a-1
+
+
+1. The subtraction assign to 1.
+"a" + (-1)
+
+2. Since we used addition (+), it will prioritize the concatenation, So (-1) will converted into a “numeric-string.
+
+"a" + "-1"
+
+OUTPUT :
+‣ a-1
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+1 + - "a"  
+1 + (- "a") 
+We have unary operator, unary negation. 
+As per hierarchy JS engine evaluate it first and we know unary plus or negation
+can't be assign to a string, that's why JS engine try to convert that into a number and a “non-numeric-string” can't be
+converted into a number.
+So JS engine finds it's Not a Number and returns that.
+
+1 + NaN
+
+We have a number and addition operator so the ARITHMETIC rule will applied and if you perform any arithmetic operation
+with NaN, the result will always be NaN.
+
+OUTPUT :
+NaN
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+"true" - 5 
+NaN - 5
+NaN
+
+Here, we have subtraction so the ARITHMETIC rule should apply, and he tries to convert the string into a number and 
+he finds it's Not a Number, and he returns that.
+
+And you know when you do any arithmetic operations with NaN the Output will be NaN.
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+But if you have a string and addition (+) in any of your two operands, the CONCATENATION rule will will applied and
+string concatenation will performed.
+
+"1" + - "a"  
+"1" + NaN
+"1NaN"
+
+As per hierarchy the unary negation should evaluated first but JS engine can't assign the unary negation to string,
+that's why he tries to convert the string to number, he finds it's a Not a Number and returns that.
+
+Next you have a string and addition (+), so as per rule the CONCATENATION rule should apply, and he applied that.
+
+Then you will get : "1NaN"
+
+
+# --------------------------------------------------------------------------------------------------------------- #
+
+1 + - - + - "1" 
+1 + (- (-(+ (-1)))) // The unary negation string will converted into a number because, a unary plus or minus can not be assign to a string.
+1 + (- (- (-1)))
+1 + (- (+1))
+1 + (-1) // Now the ARITHMETIC rule is applied
+1 - 1 
+0 
+
+
+1 + - - + - "1" (This is the expression that you wrote.)
+
+
+Q. What is an Expression?
+A. An expression is any valid piece of code that JavaScript can evaluate to produce a value.
+
+Q. What does “Evaluate” mean?
+A. To evaluate an expression means that JavaScript processes it according to its rules (like operator precedence, type conversion, etc.) and produces a final value.
+
+Q. Meaning of “Determines”
+A. The verb “determines” means “decides” or “causes something to happen in a certain way.”
+
+
+
+• What if we both are string.
+
+"1" + - - + - "1"
+
+"1" + (- (-(+ (-1)))) // The unary negation string will converted into a number because, a unary plus or minus can not be assign to a string.
+"1" +  (- (- (-1)))
+"1" + (- (+1))
+"1" + (-1) // we have a string and addition operator so as per rule it will perform CONCATENATION rule.
+"1-1" 
+
+
+• What if we have subtraction (-) as main operator?
+
+"1" - - - + - "1"
+
+"1" - (- (-(+ (-1)))) // The unary negation string will converted into a number because, a unary plus or minus can not be assign to a string.
+"1" - (- (- (-1)))
+"1" - (- (+1))
+"1" - (-1) // we have subtraction operator so as per ARITHMETIC rule it will converts the string into number 
+1 - (-1) // Converts that string into a number, because we subtraction as main operator.
+1 + 1
+2
+
+
+
+
+
+
+

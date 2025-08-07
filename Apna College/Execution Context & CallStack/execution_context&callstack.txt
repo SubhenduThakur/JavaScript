@@ -1,0 +1,389 @@
+---------------------------------------------- EXECUTION CONTEXT ---------------------------------------------- 
+
+➣ There is two Execution Contexts :
+(i). Global Execution Context (GEC).
+(ii). Function Execution Context (FEC).
+
+(i). Global Execution Context (GEC) : 
+- In the Global Execution Context (GEC), all variables and function are stored inside the global object, which is referenced by "this".
+
+
+◼ When JavaScript runs your code, it goes through two phases:
+
+	1.	Memory Creation Phase (Hoisting Phase)
+
+	•	All variables are stored in memory with an initial value (undefined).
+	•	Function declarations are stored with their full function definition.
+	•	Function expressions are stored as undefined (like variables).
+
+
+	2.	Code Execution Phase (Line-by-Line Execution)
+
+	•	JavaScript assigns actual values to variables.
+	•	Functions execute when called.
+
+
+
+(ii). Function Execution Context (FEC) :
+- Whenever a function call/invoked, a new Function Execution Context (FEC) is created, This FEC goes through two phases agian,
+into a function.
+
+‣ Memory Creation Phase.
+‣ Execution Phase.
+
+--------------------------------------------------------------------------------------------------------------- 
+
+let val1 = 10;
+let val2 = 5;
+
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total;
+}
+
+let result1 = addNum(val1, val2);
+let result2 = addNum(10, 2);
+
+
+
+
+→ Step 1:
+
+Global Execution Context (GEC) :
+
+• When your script starts, JavaScript creates a Global Execution Context (GEC) in two phases.
+
+
+
+
+→ Step 2:
+
+1. Memory Creation Phase (first phase) -
+
+‣ JavaScript scans the code and allocates memory for variables and functions.
+
+
+Variable/Function	    Stored Value
+
+val1	                undefined
+val2	                undefined
+addNum	                Function Definition
+result1	                undefined
+result2	                undefined
+
+
+✅ Note:
+	•	addNum is a function declaration, so it is stored with its full definition in memory.
+	•	Other variables (val1, val2, result1, result2) are set to undefined.
+
+
+
+
+→ Step 3: 
+
+2. Code Execution Phase (second phase) -
+
+‣ Now, JavaScript executes the code line by line.
+
+Step 1: Assign values to val1 and val2
+
+
+let val1 = 10;
+let val2 = 5;
+
+
+
+Variable	New Value
+val1	    10
+val2	    5
+
+
+
+• Function Declaration (Skipped) :
+
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total;
+}
+
+✅ No execution happens here, as function declarations are already stored in memory.
+
+
+--------------------------------------------------------------------------------------------------------------- 
+
+
+★ Function Execution Context (addNum(val1, val2)) →
+
+‣ Function is called ⇢ New Execution Context (FEC) is created.
+‣ That means this will go through two phases agian, into a function.
+
+
+1. Memory Phase (Inside Function) :
+
+let result1 = addNum(val1, val2);
+
+
+Variable	Stored Value
+
+num1	    10
+num2	    5
+total	    undefined
+
+
+
+
+2. Execution Phase (Inside Function) :
+
+let total = num1 + num2; // total = 10 + 5 = 15
+return total;
+
+✅ Global Context Updated:
+
+
+Variable	New Value
+
+result1	    15
+
+
+✦ The function execution context is deleted after returning 15, and the value 15 assigned to result1 or the value
+  returned to the Global Execution Context.
+
+
+--------------------------------------------------------------------------------------------------------------- 
+
+
+★ Function Execution (addNum(10, 2)) →
+
+let result2 = addNum(10, 2);
+
+
+1. Memory Phase (Inside Function Execution Context) :
+
+
+Variable	Stored Value
+
+num1	    10
+num2	    2
+total	    undefined
+
+
+
+
+2. Execution Phase (Inside Function) :
+
+let total = num1 + num2; // total = 10 + 2 = 12
+return total;
+
+✦ The function returns 12, which is assigned to result2.
+
+
+
+
+Final Output :
+
+console.log(result1); // 15
+console.log(result2); // 12
+
+
+🔹 The global execution context ends after executing all code.
+
+--------------------------------------------------------------------------------------------------------------- 
+
+→ Recap: How Execution Context Works :
+
+	1.	Global Execution Context (GEC) -
+	•	Created at the start.
+	•	Stores variables (undefined) and function definitions.
+
+	2.	Function Execution Context (FEC) -
+	•	Created whenever a function is called.
+	•	Stores function parameters & local variables.
+	•	Returns a value and is deleted after execution.
+
+--------------------------------------------------------------------------------------------------------------- 
+
+
+→ What If We Used a Function Expression?
+
+If we wrote the function like this:
+
+let val1 = 10;
+let val2 = 5;
+
+let result1 = addNum(val1, val2);
+let addNum = function(num1, num2) {
+    let total = num1 + num2;
+    return total;
+};
+
+Then, in the Memory Creation Phase, addNum would be set to undefined (instead of storing the function definition).
+
+Variable	Stored Value
+
+val1	    undefined
+val2	    undefined
+result1	    undefined
+addNum      undefined
+
+✅ This means calling addNum() before the function is assigned would cause an error:
+❌ TypeError: addNum is not a function
+
+
+★ That's why in ‘Function Expression’ if we call/invoke the function before them it's not working.
+
+
+-------------------------------------------------- CALL STACK ------------------------------------------------- 
+
+• A call stack is a data structure that JavaScript uses to keep track of function calls. It follows the Last In,
+  First Out (LIFO) principle, meaning the last function added is the first to be removed.
+
+◼︎ How the Call Stack Works:
+
+	1.	When a function is called, it is added to the top of the call stack.
+	2.	If that function calls another function, the new function is added on top of the stack.
+	3.	When a function completes, it is removed from the stack.
+	4.	The process continues until the stack is empty.
+
+
+
+function first() {
+    console.log("First function");
+    second(); // Calling second()
+}
+
+function second() {
+    console.log("Second function");
+    third(); // Calling third()
+}
+
+function third() {
+    console.log("Third function");
+}
+
+first(); // Calling first()
+
+
+
+◼︎ Step-by-Step Execution:
+
+	1.	first() is called → Added to the stack.
+	2.	first() calls second() → second() is added to the stack.
+	3.	second() calls third() → third() is added to the stack.
+	4.	third() executes → Removed from the stack.
+	5.	second() completes → Removed from the stack.
+	6.	first() completes → Removed from the stack.
+	7.	The stack is now empty.
+
+
+• There is three function call :
+first()
+second()
+third()
+
+
+
+--------------------------------------------------------------------------------------------------------------- 
+
+    first() ↘︎
+    second() 
+    third() 
+
+    |                  |
+    |                  |
+    |                  |
+    |                  |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+--------------------------------------------------------------------------------------------------------------- 
+
+    second() ↘︎
+    third() 
+
+    |                  |            First function
+    |                  |
+    |                  |
+    |     first()      |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+    1.	first() is called, so it is added to the stack.
+    2.	Inside first(), we have console.log("First function"), which prints: First function
+
+--------------------------------------------------------------------------------------------------------------- 
+
+    third() ↘︎
+
+    |                  |            First function
+    |                  |            Second function
+    |     second()     |
+    |     first()      |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+	3.	Then second() is called inside first(), so it is added to the stack.
+	4.	Inside second(), we have console.log("Second function"), which prints: Second function
+
+--------------------------------------------------------------------------------------------------------------- 
+    ↘︎
+    
+    |                  |            First function
+    |     third()      |            Second function
+    |     second()     |            Third function
+    |     first()      |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+	5.	Then third() is called inside second(), so it is added to the stack.
+	6.	Inside third(), we have console.log("Third function"), which prints: Third function
+
+--------------------------------------------------------------------------------------------------------------- 
+
+                        ↘︎
+    |                  |    third()
+    |             ↑    |
+    |     second()     |
+    |     first()      |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+    7.	third() completes and is removed from the stack.
+
+--------------------------------------------------------------------------------------------------------------- 
+
+                        ↘︎
+    |                  |    second()
+    |                  |    third()
+    |            ↑     |
+    |     first()      |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+    8.	second() completes and is removed from the stack.
+
+--------------------------------------------------------------------------------------------------------------- 
+                        ↘︎
+    |                  |    first()
+    |                  |    second()
+    |                  |    third()
+    |                  |
+    |__________________|
+    | Global Execution |
+    |     Context      |
+    |__________________|
+
+    9.	first() completes and is removed from the stack.
+
+--------------------------------------------------------------------------------------------------------------- 

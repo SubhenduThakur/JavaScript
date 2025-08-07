@@ -1,0 +1,121 @@
+--------------------------------------------- First-class Citizens -------------------------------------------- 
+
+Q. What Does "First-Class Citizen" Mean?
+A. In programming, a first-class citizen (sometimes called a first-class object) is anything in a language
+that can be treated like a regular value (think of numbers or strings) and used flexibly in your code.
+
+Specifically, it’s something that can:
+    • Be assigned to a variable.
+    • Be passed as an argument to a function.
+    • Be returned as a value from a function.
+    • Be stored in data structures like arrays or objects.
+- If something meets these criteria, it’s a first-class citizen. In JavaScript, functions are a perfect
+  example of this, and that’s what makes them so special.
+
+---------------------------------------------------------------------------------------------------------------
+
+➢ Functions as First-Class Citizens in JavaScript
+
+• In JavaScript, functions aren’t just chunks of code you run—they’re treated like values, just like numbers or strings.
+  Let’s look at how this works with some examples.
+
+
+1. Assigning a Function to a Variable
+-  You can store a function in a variable, just like you’d store a number.
+
+// Assigning a number to a variable
+let num = 10;
+
+// Assigning a function to a variable
+let sayHi = function() {
+    console.log("Hi there!");
+};
+
+// Calling the function
+sayHi();  // Logs: "Hi there!"
+
+- Here, sayHi is a variable holding a function, and you can use it whenever you want by calling sayHi().
+
+---------------------------------------------------------------------------------------------------------------
+
+2. Passing a Function as an Argument
+-  You can pass a function to another function, just like passing a number or string.
+
+// A function that takes another function as an argument
+function runIt(myFunction) {
+    myFunction();  // Runs the function that was passed
+}
+
+// Passing a function as an argument
+runIt(function() {
+    console.log("Running now!");
+});  // Logs: "Running now!"
+
+- Here, we passed an anonymous function (one without a name) to runIt, and runIt called it for us.
+  This is how things like callbacks work in JavaScript!
+
+---------------------------------------------------------------------------------------------------------------
+
+3. Returning a Function from a Function
+-  A function can return another function, which you can then use later.
+
+// A function that returns another function
+function getTalker() {
+    return function() {
+        console.log("I’m talking!");
+    };
+}
+
+// Store the returned function in a variable
+let talk = getTalker();
+talk();  // Logs: "I’m talking!"
+
+- In this case, getTalker gives us a new function, which we save in talk and call whenever we want.
+
+---------------------------------------------------------------------------------------------------------------
+
+4. Storing Functions in Data Structures
+-  You can put functions into arrays or objects, just like any other value.
+
+// Storing functions in an array
+let tasks = [
+    function() { console.log("Task 1"); },
+    function() { console.log("Task 2"); }
+];
+
+// Running the functions from the array
+tasks[0]();  // Logs: "Task 1"
+tasks[1]();  // Logs: "Task 2"
+
+- Here, tasks is an array holding two functions, and we can call them using their index.
+
+---------------------------------------------------------------------------------------------------------------
+
+Why Is This Cool?
+
+- The fact that functions are first-class citizens in JavaScript means you can do some really powerful things:
+
+    • Callbacks: Pass a function to another function to run later (like waiting for data to load).
+    • Modular Code: Store functions in variables or arrays to reuse them easily.
+    • Flexibility: Create functions that generate other functions on the fly.
+
+✓ For example, when you use something like setTimeout to delay code execution, you’re passing a function
+  as an argument because it’s a first-class citizen:
+
+setTimeout(function() {
+    console.log("This runs after 2 seconds!");
+}, 2000);
+
+---------------------------------------------------------------------------------------------------------------
+
+Wrapping It Up
+
+- So, a first-class citizen in programming is anything you can:
+
+    • Assign to a variable,
+    • Pass to a function,
+    • Return from a function,
+    • Or store in something like an array or object.
+
+In JavaScript, functions are first-class citizens, which means you can treat them like any other value.
+That’s why you can pass them around, store them, and use them in all sorts of creative ways.
